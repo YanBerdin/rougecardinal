@@ -78,10 +78,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, 
-      hsl(0 10% 98%) 0%, 
-      hsl(0 5% 96%) 50%, 
-      hsl(0 10% 98%) 100%);
+    /* Light mode: utilise la couleur #F5F3EB */
+    background: #F5F3EB;
   }
   
   .dark body {
@@ -518,12 +516,13 @@ html {
   border: 1px solid hsl(var(--border));
 }
 
-/* Muted sections with subtle tint */
+/* Muted sections with subtle tint - ADAPTÉ AU NOUVEAU BACKGROUND */
 .bg-muted\/30 {
+  /* En light mode, utilise une teinte plus chaude qui s'harmonise avec #F5F3EB */
   background: linear-gradient(135deg, 
-    hsl(0 15% 96%) 0%, 
-    hsl(0 10% 94%) 50%, 
-    hsl(0 15% 96%) 100%);
+    #F0EDE3 0%, 
+    #EBE7DB 50%, 
+    #F0EDE3 100%);
 }
 
 .dark .bg-muted\/30 {
