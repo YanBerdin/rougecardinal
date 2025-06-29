@@ -32,7 +32,7 @@ export function Hero() {
     }
   ];
 
-  // Simulate loading
+  // Simulate loading //TODO Remove
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
