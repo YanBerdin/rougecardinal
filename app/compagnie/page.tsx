@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { Metadata } from 'next';
 import { Users, Heart, Award, Target, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { PageSkeleton } from '@/components/skeletons/page-skeleton';
 
 export const metadata: Metadata = {
   title: 'La Compagnie | Rouge-Cardinal',
@@ -57,7 +59,7 @@ const team = [
   }
 ];
 
-export default function CompagniePage() {
+function CompagnieContent() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -191,4 +193,22 @@ export default function CompagniePage() {
       </section>
     </div>
   );
+}
+
+export default function CompagniePage() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <PageSkeleton />;
+  }
+
+  return <CompagnieContent />;
 }

@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, MapPin, Clock, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { PageSkeleton } from '@/components/skeletons/page-skeleton';
 
 export const metadata: Metadata = {
   title: 'Spectacles | Rouge-Cardinal',
@@ -76,7 +78,7 @@ const archivedShows = [
   }
 ];
 
-export default function SpectaclesPage() {
+function SpectaclesContent() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -263,4 +265,22 @@ export default function SpectaclesPage() {
       </section>
     </div>
   );
+}
+
+export default function SpectaclesPage() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <PageSkeleton />;
+  }
+
+  return <SpectaclesContent />;
 }

@@ -1,7 +1,9 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { NewsSkeleton } from '@/components/skeletons/news-skeleton';
 
 const news = [
   {
@@ -31,6 +33,20 @@ const news = [
 ];
 
 export function FeaturedNews() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <NewsSkeleton />;
+  }
+
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

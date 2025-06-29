@@ -4,10 +4,12 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { HeroSkeleton } from '@/components/skeletons/hero-skeleton';
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
   const isDragging = useRef<boolean>(false);
@@ -30,6 +32,15 @@ export function Hero() {
     }
   ];
 
+  // Simulate loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, [slides.length]);
@@ -44,7 +55,7 @@ export function Hero() {
 
   // Auto-play functionality
   useEffect(() => {
-    if (isAutoPlaying) {
+    if (isAutoPlaying && !isLoading) {
       autoPlayRef.current = setInterval(nextSlide, 6000);
     } else {
       if (autoPlayRef.current) {
@@ -57,7 +68,7 @@ export function Hero() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [isAutoPlaying, nextSlide]);
+  }, [isAutoPlaying, nextSlide, isLoading]);
 
   // Pause auto-play on user interaction
   const pauseAutoPlay = useCallback(() => {
@@ -67,6 +78,7 @@ export function Hero() {
 
   // Touch/Mouse event handlers
   const handleTouchStart = useCallback((e: React.TouchEvent | React.MouseEvent) => {
+    if (isLoading) return;
     pauseAutoPlay();
     isDragging.current = true;
     
@@ -76,20 +88,20 @@ export function Hero() {
       touchStartX.current = e.clientX;
       e.preventDefault(); // Prevent text selection on mouse drag
     }
-  }, [pauseAutoPlay]);
+  }, [pauseAutoPlay, isLoading]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent | React.MouseEvent) => {
-    if (!isDragging.current) return;
+    if (!isDragging.current || isLoading) return;
     
     if ('touches' in e) {
       touchEndX.current = e.touches[0].clientX;
     } else {
       touchEndX.current = e.clientX;
     }
-  }, []);
+  }, [isLoading]);
 
   const handleTouchEnd = useCallback(() => {
-    if (!isDragging.current) return;
+    if (!isDragging.current || isLoading) return;
     isDragging.current = false;
 
     const deltaX = touchStartX.current - touchEndX.current;
@@ -107,11 +119,12 @@ export function Hero() {
 
     touchStartX.current = 0;
     touchEndX.current = 0;
-  }, [nextSlide, prevSlide]);
+  }, [nextSlide, prevSlide, isLoading]);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (isLoading) return;
       if (e.key === 'ArrowLeft') {
         pauseAutoPlay();
         prevSlide();
@@ -123,7 +136,11 @@ export function Hero() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextSlide, prevSlide, pauseAutoPlay]);
+  }, [nextSlide, prevSlide, pauseAutoPlay, isLoading]);
+
+  if (isLoading) {
+    return <HeroSkeleton />;
+  }
 
   return (
     <section 

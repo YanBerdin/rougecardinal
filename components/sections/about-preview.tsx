@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Users, Heart, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AboutSkeleton } from '@/components/skeletons/about-skeleton';
 
 const stats = [
   { icon: Users, value: '15+', label: 'Années d\'expérience' },
@@ -9,6 +11,20 @@ const stats = [
 ];
 
 export function AboutPreview() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <AboutSkeleton />;
+  }
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
