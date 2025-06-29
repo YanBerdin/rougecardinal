@@ -1,3 +1,5 @@
+'use client';
+
 export function PageSkeleton() {
   return (
     <div className="pt-16">

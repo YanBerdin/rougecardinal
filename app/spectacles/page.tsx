@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { SpectaclesClientPage } from './client-page';
+import SpectaclesClientPage from './client-page';
 
 export const metadata: Metadata = {
   title: 'Spectacles | Rouge-Cardinal',
