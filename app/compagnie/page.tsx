@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { Metadata } from 'next';
 import { Users, Heart, Award, Target, Quote } from 'lucide-react';
