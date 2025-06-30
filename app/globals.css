@@ -369,7 +369,7 @@
     border-color: hsl(0 65% 55% / 0.4);
   }
 
-  /* NOUVEAU : Liquid Glass Button Noir avec HOVER ROUGE - SANS BORDURE POUR ÉVITER LE TREMBLEMENT */
+  /* SOLUTION RÉVOLUTIONNAIRE : Liquid Glass Button avec PSEUDO-ÉLÉMENT pour bordure */
   .liquid-glass-black {
     position: relative;
     overflow: hidden;
@@ -380,18 +380,17 @@
       rgba(0, 0, 0, 0.85) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* SUPPRESSION COMPLÈTE DE LA BORDURE - UTILISATION DE BOX-SHADOW À LA PLACE */
+    /* SUPPRESSION COMPLÈTE DE TOUTE BORDURE */
     border: none !important;
     /* Texte blanc contrasté - FORCÉ */
     color: rgba(255, 255, 255, 0.95) !important;
     font-weight: 600;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    /* BOX-SHADOW POUR SIMULER UNE BORDURE SANS LAYOUT SHIFT */
+    /* OMBRES SANS BORDURE SIMULÉE */
     box-shadow: 
       0 4px 20px rgba(0, 0, 0, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-      0 0 0 2px rgba(0, 0, 0, 0.4); /* BORDURE SIMULÉE */
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     /* TRANSITION ULTRA-STABILISÉE */
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     /* STABILISATION GPU MAXIMALE */
@@ -404,6 +403,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    /* ISOLATION POUR PSEUDO-ÉLÉMENT */
+    isolation: isolate;
+  }
+
+  /* BORDURE PSEUDO-ÉLÉMENT - SOLUTION ANTI-TREMBLEMENT */
+  .liquid-glass-black::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: inherit;
+    /* CRUCIAL : pointer-events: none pour éviter les conflits de hover */
+    pointer-events: none;
+    /* Z-index pour être au-dessus du background mais sous le texte */
+    z-index: -1;
+    transition: border-color 0.3s ease;
   }
 
   /* Effet shimmer noir */
@@ -423,6 +441,7 @@
     transition: left 0.8s ease;
     transform: translateZ(0);
     pointer-events: none;
+    z-index: 1;
   }
 
   /* HOVER ROUGE EN LIGHT MODE - AUCUN CHANGEMENT DE DIMENSIONS */
@@ -437,12 +456,16 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
     /* TRANSFORMATION STABILISÉE - MÊME DIMENSIONS */
     transform: translateY(-2px) translateZ(0);
-    /* BOX-SHADOW MODIFIÉ SANS CHANGER LES DIMENSIONS */
+    /* BOX-SHADOW MODIFIÉ SANS BORDURE */
     box-shadow: 
       0 6px 24px hsl(0 65% 50% / 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 hsl(0 65% 50% / 0.3),
-      0 0 0 2px rgba(0, 0, 0, 0.4); /* BORDURE SIMULÉE IDENTIQUE */
+      inset 0 -1px 0 hsl(0 65% 50% / 0.3);
+  }
+
+  /* BORDURE PSEUDO-ÉLÉMENT AU HOVER - MÊME COULEUR */
+  .liquid-glass-black:hover::after {
+    border-color: rgba(0, 0, 0, 0.4);
   }
 
   .liquid-glass-black:hover::before {
@@ -459,12 +482,15 @@
   .liquid-glass-black:active {
     transform: translateY(-1px) translateZ(0);
     color: rgba(255, 255, 255, 1) !important;
-    /* BOX-SHADOW IDENTIQUE EN DIMENSIONS */
+    /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
       0 4px 16px hsl(0 65% 50% / 0.5),
-      inset 0 2px 4px rgba(0, 0, 0, 0.2),
-      0 0 0 2px rgba(0, 0, 0, 0.4); /* BORDURE SIMULÉE IDENTIQUE */
+      inset 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.1s ease;
+  }
+
+  .liquid-glass-black:active::after {
+    border-color: rgba(0, 0, 0, 0.4);
   }
 
   /* Dark mode pour liquid glass noir - DIMENSIONS FIXES */
@@ -475,12 +501,16 @@
       rgba(239, 68, 68, 0.15) 100%);
     color: rgba(248, 113, 113, 1) !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    /* BOX-SHADOW POUR BORDURE SIMULÉE EN DARK MODE */
+    /* BOX-SHADOW SANS BORDURE EN DARK MODE */
     box-shadow: 
       0 4px 20px rgba(239, 68, 68, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1px 0 rgba(239, 68, 68, 0.15),
-      0 0 0 2px rgba(239, 68, 68, 0.3); /* BORDURE SIMULÉE ROUGE */
+      inset 0 -1px 0 rgba(239, 68, 68, 0.15);
+  }
+
+  /* BORDURE PSEUDO-ÉLÉMENT EN DARK MODE */
+  .dark .liquid-glass-black::after {
+    border-color: rgba(239, 68, 68, 0.3);
   }
 
   .dark .liquid-glass-black::before {
@@ -499,20 +529,26 @@
       rgba(248, 113, 113, 0.2) 100%) !important;
     color: rgba(239, 68, 68, 1) !important;
     transform: translateY(-2px) translateZ(0);
-    /* BOX-SHADOW IDENTIQUE EN DIMENSIONS */
+    /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
       0 6px 24px rgba(239, 68, 68, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(248, 113, 113, 0.2),
-      0 0 0 2px rgba(239, 68, 68, 0.3); /* BORDURE SIMULÉE IDENTIQUE */
+      inset 0 -1px 0 rgba(248, 113, 113, 0.2);
+  }
+
+  .dark .liquid-glass-black:hover::after {
+    border-color: rgba(239, 68, 68, 0.3);
   }
 
   .dark .liquid-glass-black:active {
-    /* BOX-SHADOW IDENTIQUE EN DIMENSIONS */
+    /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
       0 4px 16px rgba(239, 68, 68, 0.4),
-      inset 0 2px 4px rgba(0, 0, 0, 0.3),
-      0 0 0 2px rgba(239, 68, 68, 0.3); /* BORDURE SIMULÉE IDENTIQUE */
+      inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .liquid-glass-black:active::after {
+    border-color: rgba(239, 68, 68, 0.3);
   }
 
   /* NOUVEAU : Cartes beiges PLUS CLAIRES pour section actualités en light mode */
