@@ -277,15 +277,15 @@ export default function AgendaPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-muted/30">
+      {/* CTA - MAINTENANT ROUGE COMME "RESTEZ INFORMÉ" */}
+      <section className="py-20 hero-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ne Manquez Rien</h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <h2 className="text-3xl font-bold mb-6 text-white">Ne Manquez Rien</h2>
+          <p className="text-xl text-white/90 mb-8">
             Inscrivez-vous à notre newsletter pour être informé en avant-première 
             de nos prochaines représentations et événements.
           </p>
-          <Button size="lg" asChild>
+          <Button size="lg" className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 shadow-lg border" asChild>
             <Link href="/contact#newsletter">
               S'abonner aux actualités
             </Link>
