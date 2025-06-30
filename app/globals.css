@@ -493,6 +493,43 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
       inset 0 -1px 0 rgba(248, 113, 113, 0.2);
   }
+
+  /* NOUVEAU : Cartes beiges pour section actualités en light mode */
+  .news-card-beige {
+    /* En light mode: fond beige */
+    background: linear-gradient(135deg, 
+      #F0EDE3 0%, 
+      #EBE7DB 50%, 
+      #F0EDE3 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  /* Dark mode: garde le style normal */
+  .dark .news-card-beige {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: none;
+  }
+
+  /* Hover effect pour cartes beiges */
+  .news-card-beige:hover {
+    background: linear-gradient(135deg, 
+      #EBE7DB 0%, 
+      #E6E1D3 50%, 
+      #EBE7DB 100%);
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: translateY(-4px);
+  }
+
+  .dark .news-card-beige:hover {
+    background: hsl(var(--card));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* Animations */
