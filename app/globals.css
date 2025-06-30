@@ -369,27 +369,27 @@
     border-color: hsl(0 65% 55% / 0.4);
   }
 
-  /* NOUVEAU : Liquid Glass Button Rouge - TEINTE ROUGE PLUS VISIBLE */
+  /* NOUVEAU : Liquid Glass Button Rouge - TEINTE ROUGE PLUS VISIBLE EN LIGHT MODE */
   .liquid-glass-red {
     position: relative;
     overflow: hidden;
-    /* Background avec teinte rouge plus prononcée au repos */
+    /* Background avec teinte rouge INTENSIFIÉE pour meilleur contraste sur #F5F3EB */
     background: linear-gradient(135deg, 
-      rgba(220, 38, 38, 0.15) 0%, 
-      rgba(185, 28, 28, 0.12) 50%, 
-      rgba(220, 38, 38, 0.15) 100%);
+      rgba(220, 38, 38, 0.22) 0%, 
+      rgba(185, 28, 28, 0.18) 50%, 
+      rgba(220, 38, 38, 0.22) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     /* Bordure rouge plus visible */
-    border: 1px solid rgba(220, 38, 38, 0.3);
+    border: 1px solid rgba(220, 38, 38, 0.4);
     /* Texte rouge plus contrasté */
     color: rgba(127, 29, 29, 1);
     font-weight: 600;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
     box-shadow: 
-      0 4px 20px rgba(220, 38, 38, 0.15),
+      0 4px 20px rgba(220, 38, 38, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1px 0 rgba(220, 38, 38, 0.15);
+      inset 0 -1px 0 rgba(220, 38, 38, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -404,7 +404,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(220, 38, 38, 0.2),
+      rgba(220, 38, 38, 0.25),
       transparent
     );
     transition: left 0.8s ease;
