@@ -369,27 +369,27 @@
     border-color: hsl(0 65% 55% / 0.4);
   }
 
-  /* NOUVEAU : Liquid Glass Button Rouge - TEINTE ROUGE SUBTILE */
+  /* NOUVEAU : Liquid Glass Button Rouge - TEINTE ROUGE PLUS VISIBLE */
   .liquid-glass-red {
     position: relative;
     overflow: hidden;
-    /* Background avec légère teinte rouge */
+    /* Background avec teinte rouge plus prononcée au repos */
     background: linear-gradient(135deg, 
-      rgba(220, 38, 38, 0.08) 0%, 
-      rgba(185, 28, 28, 0.06) 50%, 
-      rgba(220, 38, 38, 0.08) 100%);
+      rgba(220, 38, 38, 0.15) 0%, 
+      rgba(185, 28, 28, 0.12) 50%, 
+      rgba(220, 38, 38, 0.15) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* Bordure rouge subtile */
-    border: 1px solid rgba(220, 38, 38, 0.2);
-    /* Texte avec teinte rouge foncée */
-    color: rgba(127, 29, 29, 0.9);
+    /* Bordure rouge plus visible */
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    /* Texte rouge plus contrasté */
+    color: rgba(127, 29, 29, 1);
     font-weight: 600;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
     box-shadow: 
-      0 4px 20px rgba(220, 38, 38, 0.1),
+      0 4px 20px rgba(220, 38, 38, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1px 0 rgba(220, 38, 38, 0.1);
+      inset 0 -1px 0 rgba(220, 38, 38, 0.15);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -404,25 +404,25 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(220, 38, 38, 0.15),
+      rgba(220, 38, 38, 0.2),
       transparent
     );
     transition: left 0.8s ease;
   }
 
   .liquid-glass-red:hover {
-    /* Intensification de la teinte rouge au hover */
+    /* Hover avec rouge plus clair et moins intense */
     background: linear-gradient(135deg, 
-      rgba(220, 38, 38, 0.15) 0%, 
-      rgba(185, 28, 28, 0.12) 50%, 
-      rgba(220, 38, 38, 0.15) 100%);
-    border-color: rgba(220, 38, 38, 0.35);
-    color: rgba(127, 29, 29, 1);
+      rgba(239, 68, 68, 0.18) 0%, 
+      rgba(220, 38, 38, 0.15) 50%, 
+      rgba(239, 68, 68, 0.18) 100%);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: rgba(185, 28, 28, 1);
     transform: translateY(-3px);
     box-shadow: 
-      0 8px 32px rgba(220, 38, 38, 0.2),
+      0 8px 32px rgba(220, 38, 38, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -1px 0 rgba(220, 38, 38, 0.2);
+      inset 0 -1px 0 rgba(239, 68, 68, 0.2);
   }
 
   .liquid-glass-red:hover::before {
@@ -432,45 +432,45 @@
   .liquid-glass-red:active {
     transform: translateY(-1px);
     box-shadow: 
-      0 4px 16px rgba(220, 38, 38, 0.25),
-      inset 0 2px 4px rgba(220, 38, 38, 0.1);
+      0 4px 16px rgba(220, 38, 38, 0.3),
+      inset 0 2px 4px rgba(220, 38, 38, 0.15);
   }
 
   /* Dark mode pour liquid glass rouge */
   .dark .liquid-glass-red {
     background: linear-gradient(135deg, 
-      rgba(239, 68, 68, 0.12) 0%, 
-      rgba(220, 38, 38, 0.08) 50%, 
-      rgba(239, 68, 68, 0.12) 100%);
-    border: 1px solid rgba(239, 68, 68, 0.25);
-    color: rgba(248, 113, 113, 0.95);
+      rgba(239, 68, 68, 0.15) 0%, 
+      rgba(220, 38, 38, 0.12) 50%, 
+      rgba(239, 68, 68, 0.15) 100%);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: rgba(248, 113, 113, 1);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     box-shadow: 
-      0 4px 20px rgba(239, 68, 68, 0.15),
+      0 4px 20px rgba(239, 68, 68, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1px 0 rgba(239, 68, 68, 0.1);
+      inset 0 -1px 0 rgba(239, 68, 68, 0.15);
   }
 
   .dark .liquid-glass-red::before {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(239, 68, 68, 0.12),
+      rgba(239, 68, 68, 0.15),
       transparent
     );
   }
 
   .dark .liquid-glass-red:hover {
     background: linear-gradient(135deg, 
-      rgba(239, 68, 68, 0.18) 0%, 
-      rgba(220, 38, 38, 0.15) 50%, 
-      rgba(239, 68, 68, 0.18) 100%);
-    border-color: rgba(239, 68, 68, 0.4);
-    color: rgba(248, 113, 113, 1);
+      rgba(248, 113, 113, 0.2) 0%, 
+      rgba(239, 68, 68, 0.18) 50%, 
+      rgba(248, 113, 113, 0.2) 100%);
+    border-color: rgba(248, 113, 113, 0.4);
+    color: rgba(239, 68, 68, 1);
     box-shadow: 
-      0 8px 32px rgba(239, 68, 68, 0.25),
+      0 8px 32px rgba(239, 68, 68, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(239, 68, 68, 0.15);
+      inset 0 -1px 0 rgba(248, 113, 113, 0.2);
   }
 }
 
