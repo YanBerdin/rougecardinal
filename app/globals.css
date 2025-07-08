@@ -125,11 +125,11 @@
   }
 
   .brand-black {
-    color: #1a0408;
+    color: #090103;
   }
 
   .brand-black-bg {
-    background-color: #1a0408;
+    background-color: #090103;
   }
 
   /* Liquid Glass Effect */
@@ -386,13 +386,13 @@
     min-height: 44px !important;
     padding: 0.75rem 1.5rem !important;
     /* BORDURE CSS NATIVE - STABLE ET SANS CONFLIT */
-    border: 2px solid #1a0408 !important;
+    border: 2px solid #090103 !important;
     border-radius: 0.5rem !important;
     /* Background noir avec transparence pour effet glass */
     background: linear-gradient(135deg, 
-      #1a0408 0%, 
-      #2a0c10 50%, 
-      #1a0408 100%) !important;
+      #090103 0%, 
+      #150408 50%, 
+      #090103 100%) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     /* Texte blanc contrasté - FORCÉ */
@@ -447,7 +447,7 @@
       #b01b33 50%, 
       #c41e3a 100%) !important;
     /* BORDURE IDENTIQUE - AUCUN CHANGEMENT */
-    border: 2px solid #1a0408 !important;
+    border: 2px solid #090103 !important;
     /* TEXTE BLANC FORCÉ AU HOVER */
     color: rgba(255, 255, 255, 1) !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
@@ -475,7 +475,7 @@
     transform: translateY(-1px) translateZ(0) !important;
     color: rgba(255, 255, 255, 1) !important;
     /* BORDURE IDENTIQUE */
-    border: 2px solid #1a0408 !important;
+    border: 2px solid #090103 !important;
     /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
       0 4px 16px #c41e3a80,
@@ -597,13 +597,13 @@
   .shows-card-dark {
     /* En light mode: fond noir selon spécifications */
     background: linear-gradient(135deg, 
-      #1a0408 0%, 
-      #2a0c10 50%, 
-      #1a0408 100%);
-    border: 1px solid #1a040820;
+      #090103 0%, 
+      #150408 50%, 
+      #090103 100%);
+    border: 1px solid #09010320;
     color: white;
     box-shadow: 
-      0 4px 20px rgba(26, 4, 8, 0.3),
+      0 4px 20px rgba(9, 1, 3, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
@@ -618,11 +618,11 @@
   /* Hover effect pour cartes spectacles noires */
   .shows-card-dark:hover {
     background: linear-gradient(135deg, 
-      #2a0c10 0%, 
-      #3a1018 50%, 
-      #2a0c10 100%);
+      #150408 0%, 
+      #200610 50%, 
+      #150408 100%);
     box-shadow: 
-      0 8px 32px rgba(26, 4, 8, 0.4),
+      0 8px 32px rgba(9, 1, 3, 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transform: translateY(-4px);
   }
