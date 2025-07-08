@@ -69,9 +69,7 @@ export function Header() {
                   'nav-link-glass text-sm font-medium transition-all duration-300 relative z-10',
                   pathname === item.href
                     ? 'text-primary font-bold active'
-                    : isScrolled 
-                      ? 'text-white/95'
-                      : 'text-white/85'
+                    : 'text-white'
                 )}
               >
                 {item.name}
@@ -88,9 +86,7 @@ export function Header() {
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className={cn(
                 "ml-4 nav-link-glass ripple-effect",
-                isScrolled 
-                  ? "text-foreground/70 hover:text-primary" 
-                  : "text-white/85 hover:text-white"
+                "text-white hover:text-white"
               )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -107,9 +103,7 @@ export function Header() {
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className={cn(
                 "nav-link-glass ripple-effect",
-                isScrolled 
-                  ? "text-foreground/70 hover:text-primary" 
-                  : "text-white/85 hover:text-white"
+                "text-white hover:text-white"
               )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -121,9 +115,7 @@ export function Header() {
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
                 "nav-link-glass ripple-effect",
-                isScrolled 
-                  ? "text-foreground/70 hover:text-primary" 
-                  : "text-white/85 hover:text-white"
+                "text-white hover:text-white"
               )}
             >
               {isOpen ? (
@@ -147,7 +139,7 @@ export function Header() {
                     'block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 nav-link-glass',
                     pathname === item.href
                       ? 'text-primary bg-primary/10 font-bold border border-primary/20 active'
-                      : 'text-muted-foreground'
+                      : 'text-white'
                   )}
                   onClick={() => setIsOpen(false)}
                   style={{ 
