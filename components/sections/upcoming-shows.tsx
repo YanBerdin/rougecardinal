@@ -104,7 +104,7 @@ export function UpcomingShows() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {shows.map((show, index) => (
-            <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden`} style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden shows-card-dark`} style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative">
                 <div
                   className="h-48 bg-cover bg-center"
@@ -122,22 +122,22 @@ export function UpcomingShows() {
                     {show.status}
                   </Badge>
                 </div>
-                <div className="absolute bottom-4 left-4 text-white">
+                <div className="absolute bottom-4 left-4 text-white card-meta">
                   <div className="text-sm opacity-90">{show.genre}</div>
                 </div>
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors card-title">
                   <Link href={`/spectacles/${show.id}`}>
                     {show.title}
                   </Link>
                 </h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                <p className="mb-4 text-sm leading-relaxed card-text">
                   {show.description}
                 </p>
                 
-                <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="space-y-2 text-sm card-meta">
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-3 text-primary" />
                     {new Date(show.date).toLocaleDateString('fr-FR', {
@@ -161,7 +161,7 @@ export function UpcomingShows() {
               <CardFooter className="pt-0">
                 <div className="flex space-x-2 w-full">
                   <Button 
-                    className="flex-1 bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border" 
+                    className="flex-1 btn-primary" 
                     asChild
                   >
                     <Link href={`/spectacles/${show.id}`}>
@@ -172,7 +172,7 @@ export function UpcomingShows() {
                     variant="outline" 
                     size="sm" 
                     asChild 
-                    className="bg-white/5 border-white/20 text-muted-foreground backdrop-blur-sm hover:bg-white/10 hover:text-foreground transition-all duration-300"
+                    className="btn-outline"
                   >
                     <Link href={`/spectacles/${show.id}`}>
                       Détails

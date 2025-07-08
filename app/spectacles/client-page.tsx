@@ -116,7 +116,7 @@ export default function SpectaclesClientPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {currentShows.map((show, index) => (
-              <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden`} style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden shows-card-dark`} style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                   <div className="relative">
                     <div
@@ -141,23 +141,23 @@ export default function SpectaclesClientPage() {
                   <CardContent className="p-6 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm text-primary font-medium">{show.genre}</span>
-                        <span className="text-sm text-muted-foreground">
+                        <span className="text-sm text-primary font-medium card-meta">{show.genre}</span>
+                        <span className="text-sm card-date">
                           Première : {new Date(show.premiere).toLocaleDateString('fr-FR')}
                         </span>
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 hover:text-primary transition-colors">
+                      <h3 className="text-2xl font-bold mb-4 hover:text-primary transition-colors card-title">
                         <Link href={`/spectacles/${show.id}`}>
                           {show.title}
                         </Link>
                       </h3>
                       
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                      <p className="mb-6 leading-relaxed card-text">
                         {show.description}
                       </p>
                       
-                      <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground mb-6">
+                      <div className="grid grid-cols-2 gap-4 text-sm mb-6 card-meta">
                         <div className="flex items-center">
                           <Clock className="h-4 w-4 mr-2 text-primary" />
                           {show.duration}
@@ -171,7 +171,7 @@ export default function SpectaclesClientPage() {
                     
                     <div className="flex space-x-3">
                       <Button 
-                        className="flex-1 bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border" 
+                        className="flex-1 btn-primary" 
                         asChild
                       >
                         <Link href={`/spectacles/${show.id}`}>
@@ -181,7 +181,7 @@ export default function SpectaclesClientPage() {
                       <Button 
                         variant="outline" 
                         asChild 
-                        className="bg-white/5 border-white/20 text-muted-foreground backdrop-blur-sm hover:bg-white/10 hover:text-foreground transition-all duration-300"
+                        className="btn-outline"
                       >
                         <Link href={`/spectacles/${show.id}`}>
                           Détails
@@ -209,7 +209,7 @@ export default function SpectaclesClientPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {archivedShows.map((show, index) => (
-              <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden`} style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden shows-card-dark`} style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="relative">
                   <div
                     className="h-48 bg-cover bg-center"
@@ -228,18 +228,18 @@ export default function SpectaclesClientPage() {
                       </Badge>
                     </div>
                   )}
-                  <div className="absolute bottom-4 right-4 text-white text-sm">
+                  <div className="absolute bottom-4 right-4 text-white text-sm card-meta">
                     {show.genre}
                   </div>
                 </div>
                 
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors card-title">
                     <Link href={`/spectacles/${show.id}`}>
                       {show.title}
                     </Link>
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  <p className="text-sm leading-relaxed mb-4 card-text">
                     {show.description}
                   </p>
                 </CardContent>
@@ -247,7 +247,7 @@ export default function SpectaclesClientPage() {
                 <CardFooter>
                   <Button 
                     variant="ghost" 
-                    className="w-full bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border px-4 py-2 rounded-lg" 
+                    className="w-full btn-outline px-4 py-2 rounded-lg" 
                     asChild
                   >
                     <Link href={`/spectacles/${show.id}`}>
