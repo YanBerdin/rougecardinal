@@ -36,7 +36,7 @@ const shows = [
     id: 3,
     title: "La Danse des Ombres",
     description: "Adaptation moderne d'un classique, revisité avec audace et sensibilité par notre équipe artistique.",
-    date: "2024-08-12",
+    date: "2025-08-12",
     time: "20h00",
     venue: "Centre Culturel",
     location: "Lyon",
