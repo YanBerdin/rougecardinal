@@ -135,7 +135,7 @@ export function FeaturedNews() {
             variant="outline" 
             size="lg" 
             asChild 
-            className="liquid-glass-black"
+            className="cta-blur-button"
           >
             <Link href="/actualites">
               Voir toutes les actualités

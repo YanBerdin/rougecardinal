@@ -189,7 +189,7 @@ export function UpcomingShows() {
             variant="outline" 
             size="lg" 
             asChild 
-            className="liquid-glass-black"
+            className="cta-blur-button"
           >
             <Link href="/agenda">
               Voir tout l'agenda
