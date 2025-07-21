@@ -28,7 +28,7 @@ const news = [
     id: 3,
     title: "Résidence de Création",
     excerpt: "La compagnie entame une résidence de trois mois au Théâtre de la Ville pour sa prochaine création.",
-    date: "2024-12-05",
+    date: "2025-12-05",
     image: "https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Création"
   }
