@@ -62,7 +62,7 @@ export function AboutPreview() {
             <Button 
               size="lg" 
               asChild 
-              className="liquid-glass-black"
+              className="cta-blur-button"
             >
               <Link href="/compagnie">
                 Découvrir notre histoire
