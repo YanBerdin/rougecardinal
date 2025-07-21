@@ -12,15 +12,15 @@ const news = [
     id: 1,
     title: "Nomination aux Molières 2024",
     excerpt: "Notre spectacle 'Les Murmures du Temps' a été nominé dans la catégorie Meilleur Spectacle d'Auteur Contemporain.",
-    date: "2024-01-15",
+    date: "2025-08-15",
     image: "https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Prix"
-  },
+  },5
   {
     id: 2,
     title: "Tournée Nationale 2024",
     excerpt: "Retrouvez-nous dans 15 villes de France pour une tournée exceptionnelle de nos créations phares.",
-    date: "2024-01-10",
+    date: "2025-09-10",
     image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Tournée"
   },
