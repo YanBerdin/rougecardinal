@@ -82,7 +82,7 @@ export function FeaturedNews() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredNews.map((item, index) => (
-            <Card key={item.id} className={`card-hover animate-fade-in-up`} style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card key={item.id} className={`card-hover animate-fade-in-up news-card-dark`} style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative overflow-hidden rounded-t-lg">
                 <div
                   className="h-48 bg-cover bg-center transition-transform duration-300 hover:scale-105"
@@ -104,12 +104,12 @@ export function FeaturedNews() {
                     day: 'numeric'
                   })}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors card-title">
                   <Link href={`/actualites/${item.id}`}>
                     {item.title}
                   </Link>
                 </h3>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed card-text">
                   {item.excerpt}
                 </p>
               </CardContent>
