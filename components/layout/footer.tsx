@@ -26,23 +26,17 @@ export function Footer() {
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" asChild>
                 <a href="#" aria-label="Facebook" className="hover:text-primary">
-                  <div className="icon-circle icon-sm icon-blue">
-                    <Facebook className="h-4 w-4" />
-                  </div>
+                  <Facebook className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <a href="#" aria-label="Instagram" className="hover:text-primary">
-                  <div className="icon-circle icon-sm icon-purple">
-                    <Instagram className="h-4 w-4" />
-                  </div>
+                  <Instagram className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <a href="#" aria-label="Twitter" className="hover:text-primary">
-                  <div className="icon-circle icon-sm">
-                    <Twitter className="h-4 w-4" />
-                  </div>
+                  <Twitter className="h-5 w-5" />
                 </a>
               </Button>
             </div>
@@ -85,21 +79,15 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-primary">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-muted-foreground">
-                <div className="icon-circle icon-sm mr-1">
-                  <Mail className="h-3 w-3" />
-                </div>
+                <Mail className="h-4 w-4 text-primary" />
                 <span>contact@rouge-cardinal.fr</span>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
-                <div className="icon-circle icon-sm icon-green mr-1">
-                  <Phone className="h-3 w-3" />
-                </div>
+                <Phone className="h-4 w-4 text-primary" />
                 <span>+33 1 23 45 67 89</span>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground">
-                <div className="icon-circle icon-sm icon-blue mr-1 mt-1">
-                  <MapPin className="h-3 w-3" />
-                </div>
+                <MapPin className="h-4 w-4 mt-1 text-primary" />
                 <span>75011 Paris, France</span>
               </li>
             </ul>

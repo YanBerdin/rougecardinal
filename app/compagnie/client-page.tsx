@@ -129,13 +129,8 @@ function CompagnieContent() {
             {values.map((value, index) => (
               <Card key={index} className="text-center card-hover animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6">
-                  <div className={`icon-circle icon-lg mb-4 mx-auto ${
-                    index === 0 ? '' : 
-                    index === 1 ? 'icon-blue' : 
-                    index === 2 ? 'icon-green' : 
-                    'icon-purple'
-                  }`}>
-                    <value.icon />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-4">
+                    <value.icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
