@@ -569,12 +569,12 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transform: translateY(-4px);
   }
-*/
+
   .dark .news-card-dark:hover {
     background: hsl(var(--card));
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
-
+*/
   /* Texte des cartes noires en light mode */
   .news-card-dark .card-title {
     color: white !important;
