@@ -97,7 +97,9 @@ export function FeaturedNews() {
               
               <CardContent className="p-6">
                 <div className="flex items-center card-date text-sm mb-3">
-                  <Calendar className="h-4 w-4 mr-2 icon-hover-bounce" />
+                  <div className="icon-circle icon-sm mr-2">
+                    <Calendar className="h-3 w-3" />
+                  </div>
                   {new Date(item.date).toLocaleDateString('fr-FR', {
                     year: 'numeric',
                     month: 'long',

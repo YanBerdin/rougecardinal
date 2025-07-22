@@ -139,7 +139,9 @@ export function UpcomingShows() {
                 
                 <div className="space-y-2 text-sm card-meta">
                   <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-3 text-primary icon-hover-bounce" />
+                    <div className="icon-circle icon-sm mr-3">
+                      <Calendar className="h-3 w-3" />
+                    </div>
                     {new Date(show.date).toLocaleDateString('fr-FR', {
                       weekday: 'long',
                       year: 'numeric',
@@ -148,11 +150,15 @@ export function UpcomingShows() {
                     })}
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-3 text-primary icon-hover-wiggle" />
+                    <div className="icon-circle icon-sm icon-blue mr-3">
+                      <Clock className="h-3 w-3" />
+                    </div>
                     {show.time}
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-3 text-primary icon-hover-pulse" />
+                    <div className="icon-circle icon-sm icon-green mr-3">
+                      <MapPin className="h-3 w-3" />
+                    </div>
                     {show.venue} - {show.location}
                   </div>
                 </div>

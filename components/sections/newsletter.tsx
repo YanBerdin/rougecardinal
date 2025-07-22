@@ -58,7 +58,9 @@ export function Newsletter() {
     <section className="py-20 hero-gradient">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
-          <Mail className="h-12 w-12 text-white mx-auto mb-6 icon-float" />
+          <div className="icon-circle icon-lg mx-auto mb-6" style={{ background: 'rgba(255, 255, 255, 0.2)' }}>
+            <Mail className="text-white" />
+          </div>
           <h2 className="text-3xl font-bold text-white mb-4">
             Restez Informé
           </h2>
