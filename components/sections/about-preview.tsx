@@ -50,8 +50,12 @@ export function AboutPreview() {
             <div className="grid grid-cols-3 gap-6 mb-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-3">
-                    <stat.icon className="h-6 w-6 text-primary" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-3 icon-appear">
+                    <stat.icon className={`h-6 w-6 text-primary card-icon-animate ${
+                      index === 0 ? 'icon-bounce' : 
+                      index === 1 ? 'icon-heartbeat' : 
+                      'icon-float'
+                    }`} />
                   </div>
                   <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>

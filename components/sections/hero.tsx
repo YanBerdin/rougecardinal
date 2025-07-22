@@ -186,7 +186,7 @@ export function Hero() {
             <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
               <Link href="/spectacles">
                 {slides[currentSlide].cta}
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 button-icon-slide" />
               </Link>
             </Button>
             <Button 
@@ -194,7 +194,7 @@ export function Hero() {
               size="lg" 
               className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 shadow-lg"
             >
-              <Play className="mr-2 h-5 w-5" />
+              <Play className="mr-2 h-5 w-5 icon-hover-pulse" />
               Voir la bande-annonce
             </Button>
           </div>

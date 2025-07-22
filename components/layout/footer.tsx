@@ -26,17 +26,17 @@ export function Footer() {
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" asChild>
                 <a href="#" aria-label="Facebook" className="hover:text-primary">
-                  <Facebook className="h-5 w-5" />
+                  <Facebook className="h-5 w-5 nav-icon-hover" />
                 </a>
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <a href="#" aria-label="Instagram" className="hover:text-primary">
-                  <Instagram className="h-5 w-5" />
+                  <Instagram className="h-5 w-5 nav-icon-hover" />
                 </a>
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <a href="#" aria-label="Twitter" className="hover:text-primary">
-                  <Twitter className="h-5 w-5" />
+                  <Twitter className="h-5 w-5 nav-icon-hover" />
                 </a>
               </Button>
             </div>
@@ -79,15 +79,15 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-primary">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-muted-foreground">
-                <Mail className="h-4 w-4 text-primary" />
+                <Mail className="h-4 w-4 text-primary icon-hover-bounce" />
                 <span>contact@rouge-cardinal.fr</span>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-4 w-4 text-primary icon-hover-wiggle" />
                 <span>+33 1 23 45 67 89</span>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground">
-                <MapPin className="h-4 w-4 mt-1 text-primary" />
+                <MapPin className="h-4 w-4 mt-1 text-primary icon-hover-pulse" />
                 <span>75011 Paris, France</span>
               </li>
             </ul>
