@@ -593,8 +593,12 @@
 
   /* NOUVEAU : Cartes NOIRES pour section actualités en light mode */
   .news-card-dark {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: none;
+    color: hsl(var(--card-foreground));
     /* En light mode: fond noir selon spécifications */
-    background: linear-gradient(135deg, 
+    /*background: linear-gradient(135deg, 
       #1a0408 0%, 
       #2a0c10 50%, 
       #1a0408 100%);
@@ -603,10 +607,12 @@
     box-shadow: 
       0 4px 20px rgba(26, 4, 8, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    */
   }
 
   /* Dark mode: garde le style normal */
   .dark .news-card-dark {
+  /*  */
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     box-shadow: none;
