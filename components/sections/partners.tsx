@@ -10,7 +10,7 @@ const partners = [
     name: "Théâtre de la Ville",
     type: "Partenaire principal",
     description: "Soutien artistique et technique pour nos créations",
-    logo: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=200",
+    logo: "https://logo.clearbit.com/theatredelaville-paris.com",
     website: "https://theatredelaville.com"
   },
   {
@@ -18,40 +18,40 @@ const partners = [
     name: "Région Île-de-France",
     type: "Soutien public",
     description: "Subvention pour le développement culturel",
-    logo: "https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=200",
+    logo: "https://logo.clearbit.com/iledefrance.fr",
     website: "https://iledefrance.fr"
   },
   {
     id: 3,
-    name: "Fondation Crédit Agricole",
+    name: "Crédit Agricole",
     type: "Mécénat",
     description: "Soutien financier pour nos projets éducatifs",
-    logo: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=200",
+    logo: "https://logo.clearbit.com/credit-agricole.fr",
     website: "https://fondation.credit-agricole.com"
   },
   {
     id: 4,
-    name: "SACD",
+    name: "Orange",
     type: "Partenaire professionnel",
-    description: "Société des Auteurs et Compositeurs Dramatiques",
-    logo: "https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=200",
-    website: "https://sacd.fr"
+    description: "Partenaire technologique et mécénat culturel",
+    logo: "https://logo.clearbit.com/orange.fr",
+    website: "https://orange.fr"
   },
   {
     id: 5,
-    name: "Festival d'Avignon",
+    name: "BNP Paribas",
     type: "Partenaire artistique",
-    description: "Collaboration pour la programmation OFF",
-    logo: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=200",
-    website: "https://festival-avignon.com"
+    description: "Mécénat et soutien aux arts de la scène",
+    logo: "https://logo.clearbit.com/bnpparibas.com",
+    website: "https://bnpparibas.com"
   },
   {
     id: 6,
-    name: "Conservatoire National",
+    name: "SNCF Connect",
     type: "Partenaire éducatif",
-    description: "Formation et échanges pédagogiques",
-    logo: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=200",
-    website: "https://conservatoiredeparis.fr"
+    description: "Partenaire mobilité pour les tournées",
+    logo: "https://logo.clearbit.com/sncf-connect.com",
+    website: "https://sncf-connect.com"
   }
 ];
 
@@ -108,10 +108,22 @@ export function Partners() {
               <CardContent className="p-6 text-center h-full flex flex-col justify-between">
                 <div>
                   <div className="relative mb-4 overflow-hidden rounded-lg">
-                    <div
-                      className="h-16 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundImage: `url(${partner.logo})` }}
-                    />
+                    <div className="h-16 flex items-center justify-center bg-white/5 dark:bg-white/10 rounded-lg transition-transform duration-300 group-hover:scale-110">
+                      <img
+                        src={partner.logo}
+                        alt={`Logo ${partner.name}`}
+                        className="max-h-12 max-w-full object-contain filter brightness-0 dark:brightness-100 dark:invert-0 group-hover:brightness-100 transition-all duration-300"
+                        onError={(e) => {
+                          // Fallback si le logo ne charge pas
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = document.createElement('div');
+                          fallback.className = 'w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary font-bold text-lg';
+                          fallback.textContent = partner.name.charAt(0);
+                          target.parentNode?.appendChild(fallback);
+                        }}
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   
