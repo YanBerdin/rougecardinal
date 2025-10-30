@@ -1,24 +1,14 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Mail, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { NewsletterSkeleton } from '@/components/skeletons/newsletter-skeleton';
 
 export function Newsletter() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsInitialLoading(false);
-    }, 600);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,10 +21,6 @@ export function Newsletter() {
     setIsLoading(false);
     setEmail('');
   };
-
-  if (isInitialLoading) {
-    return <NewsletterSkeleton />;
-  }
 
   if (isSubscribed) {
     return (

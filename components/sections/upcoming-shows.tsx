@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Calendar, MapPin, Clock, Users, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShowsSkeleton } from '@/components/skeletons/shows-skeleton';
 
 const shows = [
   {
@@ -46,20 +44,6 @@ const shows = [
 ];
 
 export function UpcomingShows() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <ShowsSkeleton />;
-  }
-
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
