@@ -31,7 +31,7 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
-          DEFAULT: '#c41e3a',
+          DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
@@ -43,7 +43,7 @@ const config: Config = {
           foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: '#c41e3a',
+          DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
@@ -59,24 +59,6 @@ const config: Config = {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
-        },
-        brand: {
-          red: '#c41e3a',
-          'red-light': '#d63851',
-          'red-dark': '#a01729',
-          'red-50': '#fef2f4',
-          'red-100': '#fde6e9',
-          'red-200': '#fbd0d9',
-          'red-300': '#f7aab9',
-          'red-400': '#f27a93',
-          'red-500': '#c41e3a',
-          'red-600': '#a01729',
-          'red-700': '#7f121f',
-          'red-800': '#5f0e17',
-          'red-900': '#3f0a0f',
-          black: '#090103',
-          'black-light': '#150408',
-          'black-dark': '#040101',
         },
       },
       keyframes: {
