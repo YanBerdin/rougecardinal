@@ -3,11 +3,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Theater } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 
 const navigation = [
   { name: 'Accueil', href: '/' },
@@ -35,47 +34,39 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'liquid-glass-header header-scrolled'
-          : 'bg-transparent header-transparent'
+          ? 'bg-background/95 backdrop-blur-md shadow-md'
+          : 'bg-transparent'
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - STABILISÉ */}
+          {/* Logo */}
           <Link
             href="/"
-            className="logo-container"
+            className="flex items-center space-x-2 font-bold text-xl"
           >
-            <Image
-              src="/logo-florian.png"
-              alt="Rouge-Cardinal Logo"
-              width={40}
-              height={40}
-              className="logo-image"
-              priority
-            />
-            <span className="logo-text">Rouge-Cardinal</span>
+            <div className="p-2 bg-primary rounded-lg">
+              <Theater className="h-6 w-6 text-primary-foreground" />
+            </div>
+            <span className="text-gradient">Rouge-Cardinal</span>
           </Link>
 
           {/* Navigation Desktop */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'nav-link-glass text-sm font-medium transition-all duration-300 relative z-10',
+                  'text-sm font-medium transition-colors hover:text-primary',
                   pathname === item.href
-                    ? 'text-primary font-bold active'
-                    : 'text-white'
+                    ? 'text-primary border-b-2 border-primary'
+                    : 'text-muted-foreground'
                 )}
               >
                 {item.name}
-                {pathname === item.href && (
-                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full animate-shimmer" />
-                )}
               </Link>
             ))}
             
@@ -84,10 +75,7 @@ export function Header() {
               variant="ghost"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className={cn(
-                "ml-4 nav-link-glass ripple-effect",
-                "text-white hover:text-white"
-              )}
+              className="ml-4"
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -101,10 +89,6 @@ export function Header() {
               variant="ghost"
               size="sm"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className={cn(
-                "nav-link-glass ripple-effect",
-                "text-white hover:text-white"
-              )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -113,10 +97,6 @@ export function Header() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className={cn(
-                "nav-link-glass ripple-effect",
-                "text-white hover:text-white"
-              )}
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -129,30 +109,21 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-4 pb-3 space-y-2 liquid-glass-mobile rounded-2xl mt-4 border shadow-2xl">
-              {navigation.map((item, index) => (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md rounded-lg mt-2">
+              {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 nav-link-glass',
+                    'block px-3 py-2 rounded-md text-base font-medium transition-colors',
                     pathname === item.href
-                      ? 'text-primary bg-primary/10 font-bold border border-primary/20 active'
-                      : 'text-white'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-muted-foreground hover:text-primary hover:bg-accent'
                   )}
                   onClick={() => setIsOpen(false)}
-                  style={{ 
-                    animationDelay: `${index * 0.1}s`,
-                    animation: 'fade-in-up 0.4s ease-out forwards'
-                  }}
                 >
-                  <div className="flex items-center justify-between">
-                    {item.name}
-                    {pathname === item.href && (
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                    )}
-                  </div>
+                  {item.name}
                 </Link>
               ))}
             </div>
