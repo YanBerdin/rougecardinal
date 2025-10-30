@@ -267,7 +267,7 @@ export default function SpectaclesClientPage() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="liquid-glass-black"
+              className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg"
             >
               Voir toutes nos créations
             </Button>

@@ -279,17 +279,17 @@ export default function PressePage() {
         </div>
       </section>
 
-      {/* Accréditation - MAINTENANT ROUGE COMME "RESTEZ INFORMÉ" */}
-      <section className="py-20 hero-gradient">
+      {/* Accréditation */}
+      <section className="py-20 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Demande d'Accréditation</h2>
-          <p className="text-xl text-white/90 mb-8">
+          <h2 className="text-3xl font-bold mb-6">Demande d'Accréditation</h2>
+          <p className="text-xl text-muted-foreground mb-8">
             Journalistes et critiques, demandez votre accréditation pour nos spectacles
           </p>
-          <div className="space-y-4 text-white/90 mb-8">
+          <div className="space-y-4 text-muted-foreground">
             <p>
               Pour toute demande d'accréditation, merci d'envoyer un email à 
-              <strong className="text-white"> presse@rouge-cardinal.fr</strong> en précisant :
+              <strong className="text-primary"> presse@rouge-cardinal.fr</strong> en précisant :
             </p>
             <ul className="text-left max-w-md mx-auto space-y-2">
               <li>• Votre nom et média</li>
@@ -298,7 +298,7 @@ export default function PressePage() {
               <li>• Votre carte de presse</li>
             </ul>
           </div>
-          <Button size="lg" className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 shadow-lg border" asChild>
+          <Button size="lg" className="mt-8" asChild>
             <a href="mailto:presse@rouge-cardinal.fr?subject=Demande d'accréditation">
               Faire une demande
             </a>

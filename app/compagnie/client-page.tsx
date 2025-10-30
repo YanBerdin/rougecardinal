@@ -171,16 +171,16 @@ function CompagnieContent() {
         </div>
       </section>
 
-      {/* Mission - MAINTENANT ROUGE COMME "RESTEZ INFORMÉ" */}
-      <section className="py-20 hero-gradient">
+      {/* Mission */}
+      <section className="py-20 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Notre Mission</h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
+          <h2 className="text-3xl font-bold mb-6">Notre Mission</h2>
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Créer des spectacles qui émeuvent, questionnent et rassemblent les publics autour de l'art vivant. 
             Nous nous attachons à rendre le théâtre accessible à tous, en développant des projets artistiques 
             de qualité qui résonnent avec les enjeux de notre société.
           </p>
-          <p className="text-lg text-white/80 leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Notre engagement va au-delà de la simple représentation : nous menons des actions culturelles 
             en milieu scolaire, participons à des festivals, et soutenons la création contemporaine par 
             des résidences d'artistes et des collaborations avec de jeunes talents.
