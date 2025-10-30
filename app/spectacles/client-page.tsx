@@ -267,7 +267,7 @@ export default function SpectaclesClientPage() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="liquid-glass-black"
+               className="cta-blur-button"
             >
               Voir toutes nos créations
             </Button>
