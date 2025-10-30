@@ -1,14 +1,24 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { NewsletterSkeleton } from '@/components/skeletons/newsletter-skeleton';
 
 export function Newsletter() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsInitialLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +31,10 @@ export function Newsletter() {
     setIsLoading(false);
     setEmail('');
   };
+
+  if (isInitialLoading) {
+    return <NewsletterSkeleton />;
+  }
 
   if (isSubscribed) {
     return (
@@ -66,7 +80,7 @@ export function Newsletter() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-white text-primary hover:bg-white/90 whitespace-nowrap"
+                className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 shadow-lg border whitespace-nowrap"
               >
                 {isLoading ? 'Inscription...' : 'S\'inscrire'}
               </Button>
