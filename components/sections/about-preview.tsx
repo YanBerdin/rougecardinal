@@ -1,10 +1,6 @@
-"use client";
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Users, Heart, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { AboutSkeleton } from '@/components/skeletons/about-skeleton';
 
 const stats = [
   { icon: Users, value: '15+', label: 'Années d\'expérience' },
@@ -13,20 +9,6 @@ const stats = [
 ];
 
 export function AboutPreview() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <AboutSkeleton />;
-  }
-
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,11 +41,7 @@ export function AboutPreview() {
               ))}
             </div>
 
-            <Button 
-              size="lg" 
-              asChild 
-              className="cta-blur-button"
-            >
+            <Button size="lg" asChild>
               <Link href="/compagnie">
                 Découvrir notre histoire
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -85,7 +63,7 @@ export function AboutPreview() {
             
             {/* Floating Card */}
             <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border max-w-xs">
-              <h3 className="font-semibold mb-2 text-primary">Notre Mission</h3>
+              <h3 className="font-semibold mb-2">Notre Mission</h3>
               <p className="text-sm text-muted-foreground">
                 Créer des spectacles qui émeuvent, questionnent et rassemblent 
                 les publics autour de l'art vivant.
