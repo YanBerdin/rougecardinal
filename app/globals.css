@@ -219,17 +219,15 @@
       inset 0 -1px 0 rgba(255, 255, 255, 0.08);
   }
 
-  /* Navigation Link Hover Effect - AMÉLIORÉ POUR LE CONTRASTE */
+  /* Navigation Link Hover Effect */
   .nav-link-glass {
     position: relative;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
-    z-index: 1;
   }
 
-  /* Effet hover avec contraste amélioré - SANS BLUR */
   .nav-link-glass::before {
     content: '';
     position: absolute;
@@ -237,67 +235,23 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
     opacity: 0;
-    transition: all 0.3s ease;
-    z-index: -1;
-    /* SUPPRESSION DU BLUR QUI MASQUAIT LE TEXTE */
-    /* backdrop-filter: blur(10px); */
-    /* -webkit-backdrop-filter: blur(10px); */
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .nav-link-glass:hover::before {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
-  /* Hover pour header scrollé - CONTRASTE OPTIMAL */
-  .header-scrolled .nav-link-glass:hover::before {
-    background: hsl(0 65% 35% / 0.1);
-    box-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.05),
-      inset 0 1px 0 rgba(0, 0, 0, 0.05);
-  }
-
-  /* Hover pour header transparent - CONTRASTE BLANC */
-  .nav-link-glass:hover {
-    color: white !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    transform: translateY(-1px);
-  }
-
-  /* Hover pour header scrollé - CONTRASTE ROUGE */
-  .header-scrolled .nav-link-glass:hover {
-    color: hsl(0 65% 35%) !important;
-    text-shadow: none;
-    font-weight: 600;
-  }
-
-  /* Dark mode adjustments */
   .dark .nav-link-glass::before {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
   }
 
-  .dark .nav-link-glass:hover::before {
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  }
-
-  .dark .header-scrolled .nav-link-glass:hover::before {
-    background: hsl(0 65% 55% / 0.15);
-  }
-
-  .dark .header-scrolled .nav-link-glass:hover {
-    color: hsl(0 65% 55%) !important;
-  }
-
-  /* Ripple Effect - AMÉLIORÉ */
+  /* Ripple Effect */
   .ripple-effect {
     position: relative;
     overflow: hidden;
@@ -311,44 +265,14 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
-    pointer-events: none;
   }
 
   .ripple-effect:active::after {
-    width: 200px;
-    height: 200px;
-  }
-
-  /* Mobile menu hover - CONTRASTE PARFAIT */
-  .liquid-glass-mobile .nav-link-glass:hover {
-    background: hsl(0 65% 35% / 0.1) !important;
-    color: hsl(0 65% 35%) !important;
-    font-weight: 600;
-    transform: translateX(4px);
-    border-left: 3px solid hsl(0 65% 35%);
-  }
-
-  .dark .liquid-glass-mobile .nav-link-glass:hover {
-    background: hsl(0 65% 55% / 0.15) !important;
-    color: hsl(0 65% 55%) !important;
-    border-left-color: hsl(0 65% 55%);
-  }
-
-  /* Active state - CONTRASTE MAXIMUM */
-  .nav-link-glass.active {
-    background: hsl(0 65% 35% / 0.15);
-    color: hsl(0 65% 35%) !important;
-    font-weight: 700;
-    border: 1px solid hsl(0 65% 35% / 0.3);
-  }
-
-  .dark .nav-link-glass.active {
-    background: hsl(0 65% 55% / 0.2);
-    color: hsl(0 65% 55%) !important;
-    border-color: hsl(0 65% 55% / 0.4);
+    width: 300px;
+    height: 300px;
   }
 }
 

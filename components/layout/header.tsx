@@ -68,10 +68,10 @@ export function Header() {
                 className={cn(
                   'nav-link-glass text-sm font-medium transition-all duration-300 relative z-10',
                   pathname === item.href
-                    ? 'text-primary font-bold active'
+                    ? 'text-primary font-semibold'
                     : isScrolled 
-                      ? 'text-white/95'{/* 'text-foreground/70' */}
-                      : 'text-white/85'
+                      ? 'text-foreground/80 hover:text-primary' 
+                      : 'text-white/90 hover:text-white'
                 )}
               >
                 {item.name}
@@ -89,8 +89,8 @@ export function Header() {
               className={cn(
                 "ml-4 nav-link-glass ripple-effect",
                 isScrolled 
-                  ? "text-foreground/70 hover:text-primary" 
-                  : "text-white/85 hover:text-white"
+                  ? "hover:bg-accent/50" 
+                  : "hover:bg-white/10 text-white"
               )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -108,8 +108,8 @@ export function Header() {
               className={cn(
                 "nav-link-glass ripple-effect",
                 isScrolled 
-                  ? "text-foreground/70 hover:text-primary" 
-                  : "text-white/85 hover:text-white"
+                  ? "hover:bg-accent/50" 
+                  : "hover:bg-white/10 text-white"
               )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -122,8 +122,8 @@ export function Header() {
               className={cn(
                 "nav-link-glass ripple-effect",
                 isScrolled 
-                  ? "text-foreground/70 hover:text-primary" 
-                  : "text-white/85 hover:text-white"
+                  ? "hover:bg-accent/50" 
+                  : "hover:bg-white/10 text-white"
               )}
             >
               {isOpen ? (
@@ -146,8 +146,8 @@ export function Header() {
                   className={cn(
                     'block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 nav-link-glass',
                     pathname === item.href
-                      ? 'text-primary bg-primary/10 font-bold border border-primary/20 active'
-                      : 'text-muted-foreground'
+                      ? 'text-primary bg-primary/10 font-semibold border border-primary/20'
+                      : 'text-muted-foreground hover:text-primary hover:bg-accent/30'
                   )}
                   onClick={() => setIsOpen(false)}
                   style={{ 
@@ -155,12 +155,10 @@ export function Header() {
                     animation: 'fade-in-up 0.4s ease-out forwards'
                   }}
                 >
-                  <div className="flex items-center justify-between">
-                    {item.name}
-                    {pathname === item.href && (
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                    )}
-                  </div>
+                  {item.name}
+                  {pathname === item.href && (
+                    <div className="w-2 h-2 bg-primary rounded-full ml-auto animate-pulse" />
+                  )}
                 </Link>
               ))}
             </div>
