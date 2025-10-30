@@ -369,38 +369,25 @@
     border-color: hsl(0 65% 55% / 0.4);
   }
 
-  /* NOUVEAU : Liquid Glass Button Rouge - STABILISÉ SANS TREMBLEMENT */
-  .liquid-glass-red {
+  /* NOUVEAU : Liquid Glass Button - CONTRASTE AMÉLIORÉ POUR LIGHT MODE */
+  .liquid-glass-button {
     position: relative;
     overflow: hidden;
-    /* Background avec teinte rouge INTENSIFIÉE pour meilleur contraste sur #F5F3EB */
-    background: linear-gradient(135deg, 
-      rgba(220, 38, 38, 0.22) 0%, 
-      rgba(185, 28, 28, 0.18) 50%, 
-      rgba(220, 38, 38, 0.22) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    /* Bordure rouge plus visible */
-    border: 1px solid rgba(220, 38, 38, 0.4);
-    /* Texte rouge plus contrasté */
-    color: rgba(127, 29, 29, 1);
+    background: rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.85);
     font-weight: 600;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
     box-shadow: 
-      0 4px 20px rgba(220, 38, 38, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1px 0 rgba(220, 38, 38, 0.2);
-    /* TRANSITION STABILISÉE - évite les conflits */
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    /* STABILISATION - évite le tremblement */
-    transform: translateZ(0);
-    will-change: transform, box-shadow, background;
-    /* Zone de hover élargie pour éviter les conflits de bordure */
-    margin: 2px;
+      0 4px 16px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Effet shimmer rouge - STABILISÉ */
-  .liquid-glass-red::before {
+  .liquid-glass-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -410,80 +397,63 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(220, 38, 38, 0.25),
+      rgba(255, 255, 255, 0.2),
       transparent
     );
-    transition: left 0.8s ease;
-    /* STABILISATION */
-    transform: translateZ(0);
+    transition: left 0.6s ease;
   }
 
-  /* HOVER STABILISÉ - évite le tremblement */
-  .liquid-glass-red:hover {
-    /* Hover avec rouge plus clair et moins intense */
-    background: linear-gradient(135deg, 
-      rgba(239, 68, 68, 0.18) 0%, 
-      rgba(220, 38, 38, 0.15) 50%, 
-      rgba(239, 68, 68, 0.18) 100%);
-    border-color: rgba(239, 68, 68, 0.4);
-    color: rgba(185, 28, 28, 1);
-    /* TRANSFORMATION STABILISÉE - moins de mouvement */
-    transform: translateY(-2px) translateZ(0);
+  .liquid-glass-button:hover {
+    background: rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.95);
+    transform: translateY(-2px);
     box-shadow: 
-      0 6px 24px rgba(220, 38, 38, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -1px 0 rgba(239, 68, 68, 0.2);
+      0 8px 24px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   }
 
-  .liquid-glass-red:hover::before {
+  .liquid-glass-button:hover::before {
     left: 100%;
   }
 
-  /* ACTIVE STATE STABILISÉ */
-  .liquid-glass-red:active {
-    transform: translateY(-1px) translateZ(0);
+  .liquid-glass-button:active {
+    transform: translateY(0);
     box-shadow: 
-      0 4px 16px rgba(220, 38, 38, 0.3),
-      inset 0 2px 4px rgba(220, 38, 38, 0.15);
-    transition: all 0.1s ease;
+      0 4px 12px rgba(0, 0, 0, 0.2),
+      inset 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Dark mode pour liquid glass rouge - STABILISÉ */
-  .dark .liquid-glass-red {
-    background: linear-gradient(135deg, 
-      rgba(239, 68, 68, 0.15) 0%, 
-      rgba(220, 38, 38, 0.12) 50%, 
-      rgba(239, 68, 68, 0.15) 100%);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    color: rgba(248, 113, 113, 1);
+  /* Dark mode pour liquid glass button */
+  .dark .liquid-glass-button {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     box-shadow: 
-      0 4px 20px rgba(239, 68, 68, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1px 0 rgba(239, 68, 68, 0.15);
+      0 4px 16px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
   }
 
-  .dark .liquid-glass-red::before {
+  .dark .liquid-glass-button::before {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(239, 68, 68, 0.15),
+      rgba(255, 255, 255, 0.1),
       transparent
     );
   }
 
-  .dark .liquid-glass-red:hover {
-    background: linear-gradient(135deg, 
-      rgba(248, 113, 113, 0.2) 0%, 
-      rgba(239, 68, 68, 0.18) 50%, 
-      rgba(248, 113, 113, 0.2) 100%);
-    border-color: rgba(248, 113, 113, 0.4);
-    color: rgba(239, 68, 68, 1);
-    transform: translateY(-2px) translateZ(0);
+  .dark .liquid-glass-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.95);
     box-shadow: 
-      0 6px 24px rgba(239, 68, 68, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(248, 113, 113, 0.2);
+      0 8px 24px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1);
   }
 }
 

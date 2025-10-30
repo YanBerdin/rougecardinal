@@ -114,7 +114,7 @@ export function FeaturedNews() {
             variant="outline" 
             size="lg" 
             asChild 
-            className="liquid-glass-red"
+            className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg"
           >
             <Link href="/actualites">
               Voir toutes les actualités
