@@ -69,7 +69,7 @@ export function Header() {
                   'nav-link-glass text-sm font-medium transition-all duration-300 relative z-10',
                   pathname === item.href
                     ? 'text-primary font-bold active'
-                    : isScrolled ? 'text-foreground' : 'text-white'
+                    : 'text-white'
                 )}
               >
                 {item.name}
@@ -86,7 +86,7 @@ export function Header() {
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className={cn(
                 "ml-4 nav-link-glass ripple-effect",
-                isScrolled ? "text-foreground hover:text-foreground" : "text-white hover:text-white"
+                "text-white hover:text-white"
               )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -103,7 +103,7 @@ export function Header() {
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className={cn(
                 "nav-link-glass ripple-effect",
-                isScrolled ? "text-foreground hover:text-foreground" : "text-white hover:text-white"
+                "text-white hover:text-white"
               )}
             >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -115,7 +115,7 @@ export function Header() {
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
                 "nav-link-glass ripple-effect",
-                isScrolled ? "text-foreground hover:text-foreground" : "text-white hover:text-white"
+                "text-white hover:text-white"
               )}
             >
               {isOpen ? (

@@ -16,7 +16,6 @@
   }
 }
 
-
 @layer base {
   :root {
     --background: 0 0% 98%;
@@ -126,11 +125,11 @@
   }
 
   .brand-black {
-    color: #090103;
+    color: #1a0408;
   }
 
   .brand-black-bg {
-    background-color: #090103;
+    background-color: #1a0408;
   }
 
   /* Liquid Glass Effect */
@@ -387,13 +386,13 @@
     min-height: 44px !important;
     padding: 0.75rem 1.5rem !important;
     /* BORDURE CSS NATIVE - STABLE ET SANS CONFLIT */
-    border: 2px solid #090103 !important;
+    border: 2px solid #1a0408 !important;
     border-radius: 0.5rem !important;
     /* Background noir avec transparence pour effet glass */
     background: linear-gradient(135deg, 
-      #090103 0%, 
-      #150408 50%, 
-      #090103 100%) !important;
+      #1a0408 0%, 
+      #2a0c10 50%, 
+      #1a0408 100%) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     /* Texte blanc contrasté - FORCÉ */
@@ -448,7 +447,7 @@
       #b01b33 50%, 
       #c41e3a 100%) !important;
     /* BORDURE IDENTIQUE - AUCUN CHANGEMENT */
-    border: 2px solid #090103 !important;
+    border: 2px solid #1a0408 !important;
     /* TEXTE BLANC FORCÉ AU HOVER */
     color: rgba(255, 255, 255, 1) !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
@@ -476,7 +475,7 @@
     transform: translateY(-1px) translateZ(0) !important;
     color: rgba(255, 255, 255, 1) !important;
     /* BORDURE IDENTIQUE */
-    border: 2px solid #090103 !important;
+    border: 2px solid #1a0408 !important;
     /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
       0 4px 16px #c41e3a80,
@@ -594,116 +593,6 @@
     color: inherit !important;
   }
 }
-  /* NOUVEAU : Cartes NOIRES pour spectacles en light mode */
-  .shows-card-dark {
-    /* En light mode: fond noir selon spécifications */
-    background: linear-gradient(135deg, 
-      #090103 0%, 
-      #150408 50%, 
-      #090103 100%);
-    border: 1px solid #09010320;
-    color: white;
-    box-shadow: 
-      0 4px 20px rgba(9, 1, 3, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-
-  /* Dark mode: garde le style normal */
-  .dark .shows-card-dark {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    box-shadow: none;
-    color: hsl(var(--card-foreground));
-  }
-
-  /* Hover effect pour cartes spectacles noires */
-  .shows-card-dark:hover {
-    background: linear-gradient(135deg, 
-      #150408 0%, 
-      #200610 50%, 
-      #150408 100%);
-    box-shadow: 
-      0 8px 32px rgba(9, 1, 3, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    transform: translateY(-4px);
-  }
-
-  .dark .shows-card-dark:hover {
-    background: hsl(var(--card));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Texte des cartes spectacles noires en light mode */
-  .shows-card-dark .card-title {
-    color: white !important;
-  }
-
-  .shows-card-dark .card-text {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  .shows-card-dark .card-date {
-    color: rgba(255, 255, 255, 0.6) !important;
-  }
-
-  .shows-card-dark .card-meta {
-    color: rgba(255, 255, 255, 0.7) !important;
-  }
-
-  /* Dark mode: couleurs normales */
-  .dark .shows-card-dark .card-title,
-  .dark .shows-card-dark .card-text,
-  .dark .shows-card-dark .card-date,
-  .dark .shows-card-dark .card-meta {
-    color: inherit !important;
-  }
-
-  /* Boutons adaptés pour cartes noires */
-  .shows-card-dark .btn-primary {
-    background: linear-gradient(135deg, #c41e3a 0%, #b01b33 50%, #c41e3a 100%) !important;
-    border: 1px solid #c41e3a !important;
-    color: white !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .shows-card-dark .btn-primary:hover {
-    background: linear-gradient(135deg, #d63851 0%, #c41e3a 50%, #d63851 100%) !important;
-    box-shadow: 0 4px 16px rgba(196, 30, 58, 0.4);
-    transform: translateY(-1px);
-  }
-
-  .shows-card-dark .btn-outline {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(10px);
-  }
-
-  .shows-card-dark .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    color: white !important;
-    transform: translateY(-1px);
-  }
-
-  /* Dark mode: boutons normaux */
-  .dark .shows-card-dark .btn-primary,
-  .dark .shows-card-dark .btn-outline {
-    background: revert !important;
-    border: revert !important;
-    color: revert !important;
-    text-shadow: none !important;
-    backdrop-filter: none !important;
-  }
-
-  .dark .shows-card-dark .btn-primary:hover,
-  .dark .shows-card-dark .btn-outline:hover {
-    background: revert !important;
-    border-color: revert !important;
-    color: revert !important;
-    box-shadow: revert !important;
-    transform: revert !important;
-  }
 
 /* Animations */
 @keyframes fade-in-up {

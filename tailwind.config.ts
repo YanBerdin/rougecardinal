@@ -74,9 +74,9 @@ const config: Config = {
           'red-700': '#7f121f',
           'red-800': '#5f0e17',
           'red-900': '#3f0a0f',
-          black: '#090103',
-          'black-light': '#150408',
-          'black-dark': '#040101',
+          black: '#1a0408',
+          'black-light': '#2a0c10',
+          'black-dark': '#0a0204',
         },
       },
       keyframes: {
