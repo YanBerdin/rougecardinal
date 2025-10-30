@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,7 +12,7 @@ const shows = [
     id: 1,
     title: "Les Murmures du Temps",
     description: "Un voyage poétique à travers les âges, où passé et présent se rencontrent dans un dialogue bouleversant.",
-    date: "2024-02-15",
+    date: "2025-08-15",
     time: "20h30",
     venue: "Théâtre de la Ville",
     location: "Paris",
@@ -21,7 +24,7 @@ const shows = [
     id: 2,
     title: "Fragments d'Éternité",
     description: "Une création originale qui explore les liens invisibles qui nous unissent, entre rire et larmes.",
-    date: "2024-02-28",
+    date: "2025-09-28",
     time: "19h00",
     venue: "Théâtre des Abbesses",
     location: "Paris",
@@ -33,7 +36,7 @@ const shows = [
     id: 3,
     title: "La Danse des Ombres",
     description: "Adaptation moderne d'un classique, revisité avec audace et sensibilité par notre équipe artistique.",
-    date: "2024-03-12",
+    date: "2025-08-12",
     time: "20h00",
     venue: "Centre Culturel",
     location: "Lyon",
@@ -44,6 +47,51 @@ const shows = [
 ];
 
 export function UpcomingShows() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="h-8 bg-muted animate-pulse rounded mb-4 max-w-md mx-auto" />
+            <div className="h-6 bg-muted animate-pulse rounded max-w-2xl mx-auto" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-card rounded-lg overflow-hidden">
+                <div className="h-48 bg-muted animate-pulse" />
+                <div className="p-6 space-y-4">
+                  <div className="h-6 bg-muted animate-pulse rounded" />
+                  <div className="h-4 bg-muted animate-pulse rounded" />
+                  <div className="h-4 bg-muted animate-pulse rounded w-3/4" />
+                  <div className="space-y-2">
+                    <div className="h-4 bg-muted animate-pulse rounded w-1/2" />
+                    <div className="h-4 bg-muted animate-pulse rounded w-1/2" />
+                    <div className="h-4 bg-muted animate-pulse rounded w-1/2" />
+                  </div>
+                  <div className="flex space-x-2">
+                    <div className="h-10 bg-muted animate-pulse rounded flex-1" />
+                    <div className="h-10 bg-muted animate-pulse rounded w-20" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +104,7 @@ export function UpcomingShows() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {shows.map((show, index) => (
-            <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden`} style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card key={show.id} className={`card-hover animate-fade-in-up overflow-hidden shows-card-dark`} style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative">
                 <div
                   className="h-48 bg-cover bg-center"
@@ -64,26 +112,32 @@ export function UpcomingShows() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                  <Badge variant={
+                    show.status === 'Première' ? 'default' :
+                    show.status === 'Bientôt complet' ? 'destructive' : 'secondary'
+                  } className={
+                    show.status === 'Première' ? 'bg-primary text-primary-foreground' :
+                    show.status === 'Bientôt complet' ? 'bg-orange-500 text-white' : ''
+                  }>
                     {show.status}
                   </Badge>
                 </div>
-                <div className="absolute bottom-4 left-4 text-white">
+                <div className="absolute bottom-4 left-4 text-white card-meta">
                   <div className="text-sm opacity-90">{show.genre}</div>
                 </div>
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors card-title">
                   <Link href={`/spectacles/${show.id}`}>
                     {show.title}
                   </Link>
                 </h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                <p className="mb-4 text-sm leading-relaxed card-text">
                   {show.description}
                 </p>
                 
-                <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="space-y-2 text-sm card-meta">
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-3 text-primary" />
                     {new Date(show.date).toLocaleDateString('fr-FR', {
@@ -106,12 +160,20 @@ export function UpcomingShows() {
               
               <CardFooter className="pt-0">
                 <div className="flex space-x-2 w-full">
-                  <Button className="flex-1" asChild>
+                  <Button 
+                    className="flex-1 btn-primary" 
+                    asChild
+                  >
                     <Link href={`/spectacles/${show.id}`}>
                       Réserver
                     </Link>
                   </Button>
-                  <Button variant="outline" size="sm" asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    asChild 
+                    className="btn-outline"
+                  >
                     <Link href={`/spectacles/${show.id}`}>
                       Détails
                     </Link>
@@ -123,7 +185,12 @@ export function UpcomingShows() {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg" asChild>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            asChild 
+            className="cta-blur-button"
+          >
             <Link href="/agenda">
               Voir tout l'agenda
               <ArrowRight className="ml-2 h-5 w-5" />
