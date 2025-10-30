@@ -5,7 +5,10 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  preload: false
+});
 
 export const metadata: Metadata = {
   title: 'Rouge-Cardinal - Compagnie de Théâtre',
