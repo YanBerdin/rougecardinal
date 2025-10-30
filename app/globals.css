@@ -78,8 +78,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Light mode: blanc cassé doux et élégant */
-    background: #FAFAFA;
+    /* Light mode: utilise la couleur #F5F3EB */
+    background: #F5F3EB;
   }
   
   .dark body {
@@ -493,43 +493,6 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
       inset 0 -1px 0 rgba(248, 113, 113, 0.2);
   }
-
-  /* NOUVEAU : Cartes beiges PLUS CLAIRES pour section actualités en light mode */
-  .news-card-beige {
-    /* En light mode: fond beige très clair et doux */
-    background: linear-gradient(135deg, 
-      #F8F6F0 0%, 
-      #F5F2EA 50%, 
-      #F8F6F0 100%);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 
-      0 2px 12px rgba(0, 0, 0, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.7);
-  }
-
-  /* Dark mode: garde le style normal */
-  .dark .news-card-beige {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    box-shadow: none;
-  }
-
-  /* Hover effect pour cartes beiges - PLUS DOUX */
-  .news-card-beige:hover {
-    background: linear-gradient(135deg, 
-      #F5F2EA 0%, 
-      #F0EDE3 50%, 
-      #F5F2EA 100%);
-    box-shadow: 
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    transform: translateY(-4px);
-  }
-
-  .dark .news-card-beige:hover {
-    background: hsl(var(--card));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
 }
 
 /* Animations */
@@ -680,11 +643,11 @@ html {
 
 /* Muted sections with subtle tint - ADAPTÉ AU NOUVEAU BACKGROUND */
 .bg-muted\/30 {
-  /* En light mode, utilise une teinte plus douce qui s'harmonise avec #FAFAFA */
+  /* En light mode, utilise une teinte plus chaude qui s'harmonise avec #F5F3EB */
   background: linear-gradient(135deg, 
-    #F5F5F5 0%, 
-    #F0F0F0 50%, 
-    #F5F5F5 100%);
+    #F0EDE3 0%, 
+    #EBE7DB 50%, 
+    #F0EDE3 100%);
 }
 
 .dark .bg-muted\/30 {
