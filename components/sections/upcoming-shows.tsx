@@ -64,13 +64,7 @@ export function UpcomingShows() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <Badge variant={
-                    show.status === 'Première' ? 'default' :
-                    show.status === 'Bientôt complet' ? 'destructive' : 'secondary'
-                  } className={
-                    show.status === 'Première' ? 'bg-primary text-primary-foreground' :
-                    show.status === 'Bientôt complet' ? 'bg-orange-500 text-white' : ''
-                  }>
+                  <Badge variant="secondary" className="bg-primary text-primary-foreground">
                     {show.status}
                   </Badge>
                 </div>
@@ -112,7 +106,7 @@ export function UpcomingShows() {
               
               <CardFooter className="pt-0">
                 <div className="flex space-x-2 w-full">
-                  <Button className="flex-1 bg-primary hover:bg-primary/90" asChild>
+                  <Button className="flex-1" asChild>
                     <Link href={`/spectacles/${show.id}`}>
                       Réserver
                     </Link>
@@ -129,7 +123,7 @@ export function UpcomingShows() {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button variant="outline" size="lg" asChild>
             <Link href="/agenda">
               Voir tout l'agenda
               <ArrowRight className="ml-2 h-5 w-5" />

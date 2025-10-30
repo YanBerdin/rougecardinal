@@ -41,7 +41,7 @@ export function AboutPreview() {
               ))}
             </div>
 
-            <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
+            <Button size="lg" asChild>
               <Link href="/compagnie">
                 Découvrir notre histoire
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -63,7 +63,7 @@ export function AboutPreview() {
             
             {/* Floating Card */}
             <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border max-w-xs">
-              <h3 className="font-semibold mb-2 text-primary">Notre Mission</h3>
+              <h3 className="font-semibold mb-2">Notre Mission</h3>
               <p className="text-sm text-muted-foreground">
                 Créer des spectacles qui émeuvent, questionnent et rassemblent 
                 les publics autour de l'art vivant.

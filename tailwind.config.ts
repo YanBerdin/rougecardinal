@@ -60,21 +60,6 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-        brand: {
-          red: 'hsl(0 65% 45%)',
-          'red-light': 'hsl(0 65% 55%)',
-          'red-dark': 'hsl(0 45% 35%)',
-          'red-50': 'hsl(0 65% 95%)',
-          'red-100': 'hsl(0 65% 90%)',
-          'red-200': 'hsl(0 65% 80%)',
-          'red-300': 'hsl(0 65% 70%)',
-          'red-400': 'hsl(0 65% 60%)',
-          'red-500': 'hsl(0 65% 45%)',
-          'red-600': 'hsl(0 65% 35%)',
-          'red-700': 'hsl(0 45% 25%)',
-          'red-800': 'hsl(0 45% 15%)',
-          'red-900': 'hsl(0 45% 10%)',
-        },
       },
       keyframes: {
         'accordion-down': {
