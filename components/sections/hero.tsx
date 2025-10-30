@@ -172,11 +172,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 shadow-lg"
-            >
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black">
               <Play className="mr-2 h-5 w-5" />
               Voir la bande-annonce
             </Button>

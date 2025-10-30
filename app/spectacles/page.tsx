@@ -157,19 +157,12 @@ export default function SpectaclesPage() {
                     </div>
                     
                     <div className="flex space-x-3">
-                      <Button 
-                        className="flex-1 bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border" 
-                        asChild
-                      >
+                      <Button className="flex-1" asChild>
                         <Link href={`/spectacles/${show.id}`}>
                           Réserver
                         </Link>
                       </Button>
-                      <Button 
-                        variant="outline" 
-                        asChild 
-                        className="bg-white/5 border-white/20 text-muted-foreground backdrop-blur-sm hover:bg-white/10 hover:text-foreground transition-all duration-300"
-                      >
+                      <Button variant="outline" asChild>
                         <Link href={`/spectacles/${show.id}`}>
                           Détails
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -232,11 +225,7 @@ export default function SpectaclesPage() {
                 </CardContent>
                 
                 <CardFooter>
-                  <Button 
-                    variant="ghost" 
-                    className="w-full bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border px-4 py-2 rounded-lg" 
-                    asChild
-                  >
+                  <Button variant="ghost" className="w-full" asChild>
                     <Link href={`/spectacles/${show.id}`}>
                       Voir les détails
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -251,11 +240,7 @@ export default function SpectaclesPage() {
             <p className="text-muted-foreground mb-6">
               Plus de 40 autres créations depuis 2008...
             </p>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg"
-            >
+            <Button variant="outline" size="lg">
               Voir toutes nos créations
             </Button>
           </div>

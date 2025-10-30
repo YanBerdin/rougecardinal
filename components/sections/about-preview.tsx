@@ -41,11 +41,7 @@ export function AboutPreview() {
               ))}
             </div>
 
-            <Button 
-              size="lg" 
-              asChild 
-              className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border"
-            >
+            <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
               <Link href="/compagnie">
                 Découvrir notre histoire
                 <ArrowRight className="ml-2 h-5 w-5" />

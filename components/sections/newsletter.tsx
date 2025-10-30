@@ -66,7 +66,7 @@ export function Newsletter() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-white/10 border-white/30 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 shadow-lg border whitespace-nowrap"
+                className="bg-white text-primary hover:bg-white/90 whitespace-nowrap"
               >
                 {isLoading ? 'Inscription...' : 'S\'inscrire'}
               </Button>

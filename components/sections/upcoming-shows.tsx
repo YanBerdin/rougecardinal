@@ -112,20 +112,12 @@ export function UpcomingShows() {
               
               <CardFooter className="pt-0">
                 <div className="flex space-x-2 w-full">
-                  <Button 
-                    className="flex-1 bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border" 
-                    asChild
-                  >
+                  <Button className="flex-1 bg-primary hover:bg-primary/90" asChild>
                     <Link href={`/spectacles/${show.id}`}>
                       Réserver
                     </Link>
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    asChild 
-                    className="bg-white/5 border-white/20 text-muted-foreground backdrop-blur-sm hover:bg-white/10 hover:text-foreground transition-all duration-300"
-                  >
+                  <Button variant="outline" size="sm" asChild>
                     <Link href={`/spectacles/${show.id}`}>
                       Détails
                     </Link>
@@ -137,12 +129,7 @@ export function UpcomingShows() {
         </div>
 
         <div className="text-center">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            asChild 
-            className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg"
-          >
+          <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
             <Link href="/agenda">
               Voir tout l'agenda
               <ArrowRight className="ml-2 h-5 w-5" />

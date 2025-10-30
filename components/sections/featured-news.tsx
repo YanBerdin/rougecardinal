@@ -76,11 +76,7 @@ export function FeaturedNews() {
               </CardContent>
               
               <CardFooter>
-                <Button 
-                  variant="ghost" 
-                  className="p-0 h-auto font-medium bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border px-4 py-2 rounded-lg" 
-                  asChild
-                >
+                <Button variant="ghost" className="p-0 h-auto font-medium" asChild>
                   <Link href={`/actualites/${item.id}`}>
                     Lire la suite
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -92,12 +88,7 @@ export function FeaturedNews() {
         </div>
 
         <div className="text-center">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            asChild 
-            className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg"
-          >
+          <Button variant="outline" size="lg" asChild>
             <Link href="/actualites">
               Voir toutes les actualités
               <ArrowRight className="ml-2 h-5 w-5" />

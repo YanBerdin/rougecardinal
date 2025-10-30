@@ -38,7 +38,7 @@ export function Header() {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out',
         isScrolled
           ? 'liquid-glass-header header-scrolled'
-          : 'bg-transparent header-transparent'
+          : 'bg-transparent'
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,7 +70,7 @@ export function Header() {
                   pathname === item.href
                     ? 'text-primary font-bold active'
                     : isScrolled 
-                      ? 'text-white/95'
+                      ? 'text-white/95'{/* 'text-foreground/70' */}
                       : 'text-white/85'
                 )}
               >
