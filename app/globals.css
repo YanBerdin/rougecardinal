@@ -24,24 +24,24 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 65% 50%;
+    --primary: 0 65% 35%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 5% 94%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 65% 55%;
+    --accent: 0 65% 45%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 65% 50%;
-    --chart-1: 0 65% 50%;
-    --chart-2: 0 45% 40%;
-    --chart-3: 0 25% 30%;
-    --chart-4: 20 65% 50%;
-    --chart-5: 340 65% 50%;
+    --ring: 0 65% 35%;
+    --chart-1: 0 65% 35%;
+    --chart-2: 0 45% 25%;
+    --chart-3: 0 25% 15%;
+    --chart-4: 20 65% 35%;
+    --chart-5: 340 65% 35%;
     --radius: 0.75rem;
   }
   .dark {
@@ -92,9 +92,9 @@
 @layer components {
   .hero-gradient {
     background: linear-gradient(135deg, 
-      hsl(0 65% 50%) 0%, 
-      hsl(0 45% 40%) 50%, 
-      hsl(0 65% 50%) 100%);
+      hsl(0 65% 35%) 0%, 
+      hsl(0 45% 25%) 50%, 
+      hsl(0 65% 35%) 100%);
   }
   
   .card-hover {
@@ -103,27 +103,27 @@
   
   .text-gradient {
     background: linear-gradient(135deg, 
-      hsl(0 65% 50%), 
-      hsl(0 45% 40%));
+      hsl(0 65% 35%), 
+      hsl(0 45% 25%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .brand-red {
-    color: hsl(0 65% 50%);
+    color: hsl(0 65% 35%);
   }
 
   .brand-red-bg {
-    background-color: hsl(0 65% 50%);
+    background-color: hsl(0 65% 35%);
   }
 
   .brand-red-light {
-    color: hsl(0 65% 55%);
+    color: hsl(0 65% 45%);
   }
 
   .brand-red-dark {
-    color: hsl(0 45% 40%);
+    color: hsl(0 45% 25%);
   }
 
   /* Liquid Glass Effect */
@@ -277,7 +277,7 @@
 
   /* Hover pour header scrollé - CONTRASTE OPTIMAL */
   .header-scrolled .nav-link-glass:hover::before {
-    background: hsl(0 65% 50% / 0.1);
+    background: hsl(0 65% 35% / 0.1);
     box-shadow: 
       0 2px 8px rgba(0, 0, 0, 0.05),
       inset 0 1px 0 rgba(0, 0, 0, 0.05);
@@ -292,7 +292,7 @@
 
   /* Hover pour header scrollé - CONTRASTE ROUGE */
   .header-scrolled .nav-link-glass:hover {
-    color: hsl(0 65% 50%) !important;
+    color: hsl(0 65% 35%) !important;
     text-shadow: none;
     font-weight: 600;
   }
@@ -344,11 +344,11 @@
 
   /* Mobile menu hover - CONTRASTE PARFAIT */
   .liquid-glass-mobile .nav-link-glass:hover {
-    background: hsl(0 65% 50% / 0.1) !important;
-    color: hsl(0 65% 50%) !important;
+    background: hsl(0 65% 35% / 0.1) !important;
+    color: hsl(0 65% 35%) !important;
     font-weight: 600;
     transform: translateX(4px);
-    border-left: 3px solid hsl(0 65% 50%);
+    border-left: 3px solid hsl(0 65% 35%);
   }
 
   .dark .liquid-glass-mobile .nav-link-glass:hover {
@@ -359,10 +359,10 @@
 
   /* Active state - CONTRASTE MAXIMUM */
   .nav-link-glass.active {
-    background: hsl(0 65% 50% / 0.15);
-    color: hsl(0 65% 50%) !important;
+    background: hsl(0 65% 35% / 0.15);
+    color: hsl(0 65% 35%) !important;
     font-weight: 700;
-    border: 1px solid hsl(0 65% 50% / 0.3);
+    border: 1px solid hsl(0 65% 35% / 0.3);
   }
 
   .dark .nav-link-glass.active {
@@ -441,7 +441,7 @@ html {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.2;
-  color: hsl(0 65% 45%);
+  color: hsl(0 65% 25%);
   letter-spacing: -0.025em;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   /* Stabilisation du texte */
@@ -473,7 +473,7 @@ html {
 }
 
 .header-scrolled .logo-text {
-  color: hsl(0 65% 40%);
+  color: hsl(0 65% 20%);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
