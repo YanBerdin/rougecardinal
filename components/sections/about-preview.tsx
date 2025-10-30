@@ -62,7 +62,7 @@ export function AboutPreview() {
             <Button 
               size="lg" 
               asChild 
-              className="cta-blur-button"
+              className="bg-white/10 border-white/30 text-foreground backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg border"
             >
               <Link href="/compagnie">
                 Découvrir notre histoire

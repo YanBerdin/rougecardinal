@@ -12,7 +12,7 @@ const news = [
     id: 1,
     title: "Nomination aux Molières 2024",
     excerpt: "Notre spectacle 'Les Murmures du Temps' a été nominé dans la catégorie Meilleur Spectacle d'Auteur Contemporain.",
-    date: "2025-08-15",
+    date: "2024-01-15",
     image: "https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Prix"
   },
@@ -20,7 +20,7 @@ const news = [
     id: 2,
     title: "Tournée Nationale 2024",
     excerpt: "Retrouvez-nous dans 15 villes de France pour une tournée exceptionnelle de nos créations phares.",
-    date: "2025-09-10",
+    date: "2024-01-10",
     image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Tournée"
   },
@@ -28,33 +28,17 @@ const news = [
     id: 3,
     title: "Résidence de Création",
     excerpt: "La compagnie entame une résidence de trois mois au Théâtre de la Ville pour sa prochaine création.",
-    date: "2025-12-05",
+    date: "2024-01-05",
     image: "https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Création"
   }
 ];
 
-// Fonction pour déterminer si on a des actualités "à la une"
-const getFeaturedNews = () => {
-  // Ici vous pouvez ajouter votre logique pour filtrer les actualités "à la une"
-  // Par exemple, filtrer par une propriété "featured" ou par date récente
-  const featuredNews = news.filter(item => {
-    const itemDate = new Date(item.date);
-    const now = new Date();
-    const daysDiff = (now.getTime() - itemDate.getTime()) / (1000 * 3600 * 24);
-    return daysDiff <= 30; // Actualités des 30 derniers jours
-  });
-  
-  return featuredNews;
-};
 export function FeaturedNews() {
   const [isLoading, setIsLoading] = useState(true);
-  const [featuredNews, setFeaturedNews] = useState<typeof news>([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const featured = getFeaturedNews();
-      setFeaturedNews(featured);
       setIsLoading(false);
     }, 800);
 
@@ -65,11 +49,6 @@ export function FeaturedNews() {
     return <NewsSkeleton />;
   }
 
-  // Si pas d'actualités à la une, ne pas afficher la section
-  if (featuredNews.length === 0) {
-    return null;
-  }
-  
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,8 +60,8 @@ export function FeaturedNews() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredNews.map((item, index) => (
-            <Card key={item.id} className={`card-hover animate-fade-in-up news-card-dark`} style={{ animationDelay: `${index * 0.1}s` }}>
+          {news.map((item, index) => (
+            <Card key={item.id} className={`card-hover animate-fade-in-up news-card-beige`} style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative overflow-hidden rounded-t-lg">
                 <div
                   className="h-48 bg-cover bg-center transition-transform duration-300 hover:scale-105"
@@ -96,7 +75,7 @@ export function FeaturedNews() {
               </div>
               
               <CardContent className="p-6">
-                <div className="flex items-center card-date text-sm mb-3">
+                <div className="flex items-center text-muted-foreground text-sm mb-3">
                   <Calendar className="h-4 w-4 mr-2" />
                   {new Date(item.date).toLocaleDateString('fr-FR', {
                     year: 'numeric',
@@ -104,12 +83,12 @@ export function FeaturedNews() {
                     day: 'numeric'
                   })}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors card-title">
+                <h3 className="text-xl font-semibold mb-3 hover:text-primary transition-colors">
                   <Link href={`/actualites/${item.id}`}>
                     {item.title}
                   </Link>
                 </h3>
-                <p className="leading-relaxed card-text">
+                <p className="text-muted-foreground leading-relaxed">
                   {item.excerpt}
                 </p>
               </CardContent>
@@ -135,7 +114,7 @@ export function FeaturedNews() {
             variant="outline" 
             size="lg" 
             asChild 
-            className="cta-blur-button"
+            className="liquid-glass-black"
           >
             <Link href="/actualites">
               Voir toutes les actualités

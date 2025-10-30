@@ -16,7 +16,6 @@
   }
 }
 
-
 @layer base {
   :root {
     --background: 0 0% 98%;
@@ -25,24 +24,24 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 348 75% 44%;
+    --primary: 0 65% 50%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 5% 94%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 348 75% 49%;
+    --accent: 0 65% 55%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 348 75% 44%;
-    --chart-1: 348 75% 44%;
-    --chart-2: 348 55% 34%;
-    --chart-3: 348 35% 24%;
-    --chart-4: 20 75% 44%;
-    --chart-5: 340 75% 44%;
+    --ring: 0 65% 50%;
+    --chart-1: 0 65% 50%;
+    --chart-2: 0 45% 40%;
+    --chart-3: 0 25% 30%;
+    --chart-4: 20 65% 50%;
+    --chart-5: 340 65% 50%;
     --radius: 0.75rem;
   }
   .dark {
@@ -52,24 +51,24 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 348 75% 49%;
+    --primary: 0 65% 55%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 348 75% 54%;
+    --accent: 0 65% 65%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 348 75% 49%;
-    --chart-1: 348 75% 49%;
-    --chart-2: 348 55% 39%;
-    --chart-3: 348 35% 29%;
-    --chart-4: 20 75% 49%;
-    --chart-5: 340 75% 49%;
+    --ring: 0 65% 55%;
+    --chart-1: 0 65% 55%;
+    --chart-2: 0 45% 45%;
+    --chart-3: 0 25% 35%;
+    --chart-4: 20 65% 55%;
+    --chart-5: 340 65% 55%;
   }
 }
 
@@ -79,8 +78,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Light mode: background blanc rosé selon spécifications */
-    background: #fef7f8;
+    /* Light mode: blanc cassé doux et élégant */
+    background: #FAFAFA;
   }
   
   .dark body {
@@ -91,9 +90,9 @@
 @layer components {
   .hero-gradient {
     background: linear-gradient(135deg, 
-      #c41e3a 0%, 
-      #a01729 50%, 
-      #c41e3a 100%);
+      hsl(0 65% 50%) 0%, 
+      hsl(0 45% 40%) 50%, 
+      hsl(0 65% 50%) 100%);
   }
   
   .card-hover {
@@ -102,35 +101,27 @@
   
   .text-gradient {
     background: linear-gradient(135deg, 
-      #c41e3a, 
-      #a01729);
+      hsl(0 65% 50%), 
+      hsl(0 45% 40%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .brand-red {
-    color: #c41e3a;
+    color: hsl(0 65% 50%);
   }
 
   .brand-red-bg {
-    background-color: #c41e3a;
+    background-color: hsl(0 65% 50%);
   }
 
   .brand-red-light {
-    color: #d63851;
+    color: hsl(0 65% 55%);
   }
 
   .brand-red-dark {
-    color: #a01729;
-  }
-
-  .brand-black {
-    color: #090103;
-  }
-
-  .brand-black-bg {
-    background-color: #090103;
+    color: hsl(0 45% 40%);
   }
 
   /* Liquid Glass Effect */
@@ -299,7 +290,7 @@
 
   /* Hover pour header scrollé - CONTRASTE ROUGE */
   .header-scrolled .nav-link-glass:hover {
-    color: #c41e3a !important;
+    color: hsl(0 65% 50%) !important;
     text-shadow: none;
     font-weight: 600;
   }
@@ -317,11 +308,11 @@
   }
 
   .dark .header-scrolled .nav-link-glass:hover::before {
-    background: #c41e3a15;
+    background: hsl(0 65% 55% / 0.15);
   }
 
   .dark .header-scrolled .nav-link-glass:hover {
-    color: #d63851 !important;
+    color: hsl(0 65% 55%) !important;
   }
 
   /* Ripple Effect - AMÉLIORÉ */
@@ -351,31 +342,31 @@
 
   /* Mobile menu hover - CONTRASTE PARFAIT */
   .liquid-glass-mobile .nav-link-glass:hover {
-    background: #c41e3a1a !important;
-    color: #c41e3a !important;
+    background: hsl(0 65% 50% / 0.1) !important;
+    color: hsl(0 65% 50%) !important;
     font-weight: 600;
     transform: translateX(4px);
-    border-left: 3px solid #c41e3a;
+    border-left: 3px solid hsl(0 65% 50%);
   }
 
   .dark .liquid-glass-mobile .nav-link-glass:hover {
-    background: #d6385115 !important;
-    color: #d63851 !important;
-    border-left-color: #d63851;
+    background: hsl(0 65% 55% / 0.15) !important;
+    color: hsl(0 65% 55%) !important;
+    border-left-color: hsl(0 65% 55%);
   }
 
   /* Active state - CONTRASTE MAXIMUM */
   .nav-link-glass.active {
-    background: #c41e3a26;
-    color: #c41e3a !important;
+    background: hsl(0 65% 50% / 0.15);
+    color: hsl(0 65% 50%) !important;
     font-weight: 700;
-    border: 1px solid #c41e3a4d;
+    border: 1px solid hsl(0 65% 50% / 0.3);
   }
 
   .dark .nav-link-glass.active {
-    background: #d6385133;
-    color: #d63851 !important;
-    border-color: #d6385166;
+    background: hsl(0 65% 55% / 0.2);
+    color: hsl(0 65% 55%) !important;
+    border-color: hsl(0 65% 55% / 0.4);
   }
 
   /* SOLUTION DÉFINITIVE : Liquid Glass Button avec BORDURE CSS NATIVE */
@@ -387,13 +378,13 @@
     min-height: 44px !important;
     padding: 0.75rem 1.5rem !important;
     /* BORDURE CSS NATIVE - STABLE ET SANS CONFLIT */
-    border: 2px solid #090103 !important;
+    border: 2px solid rgba(0, 0, 0, 0.4) !important;
     border-radius: 0.5rem !important;
     /* Background noir avec transparence pour effet glass */
     background: linear-gradient(135deg, 
-      #090103 0%, 
-      #150408 50%, 
-      #090103 100%) !important;
+      rgba(0, 0, 0, 0.85) 0%, 
+      rgba(20, 20, 20, 0.8) 50%, 
+      rgba(0, 0, 0, 0.85) 100%) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     /* Texte blanc contrasté - FORCÉ */
@@ -444,11 +435,11 @@
   .liquid-glass-black:hover {
     /* Light mode: devient rouge au hover */
     background: linear-gradient(135deg, 
-      #c41e3a 0%, 
-      #b01b33 50%, 
-      #c41e3a 100%) !important;
+      hsl(0 65% 50%) 0%, 
+      hsl(0 55% 45%) 50%, 
+      hsl(0 65% 50%) 100%) !important;
     /* BORDURE IDENTIQUE - AUCUN CHANGEMENT */
-    border: 2px solid #090103 !important;
+    border: 2px solid rgba(0, 0, 0, 0.4) !important;
     /* TEXTE BLANC FORCÉ AU HOVER */
     color: rgba(255, 255, 255, 1) !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
@@ -456,9 +447,9 @@
     transform: translateY(-2px) translateZ(0) !important;
     /* BOX-SHADOW MODIFIÉ SANS BORDURE */
     box-shadow: 
-      0 6px 24px #c41e3a66,
+      0 6px 24px hsl(0 65% 50% / 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 #c41e3a4d !important;
+      inset 0 -1px 0 hsl(0 65% 50% / 0.3) !important;
   }
 
   .liquid-glass-black:hover::before {
@@ -476,10 +467,10 @@
     transform: translateY(-1px) translateZ(0) !important;
     color: rgba(255, 255, 255, 1) !important;
     /* BORDURE IDENTIQUE */
-    border: 2px solid #090103 !important;
+    border: 2px solid rgba(0, 0, 0, 0.4) !important;
     /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
-      0 4px 16px #c41e3a80,
+      0 4px 16px hsl(0 65% 50% / 0.5),
       inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.1s ease !important;
   }
@@ -487,223 +478,91 @@
   /* Dark mode pour liquid glass noir - DIMENSIONS FIXES */
   .dark .liquid-glass-black {
     background: linear-gradient(135deg, 
-      #c41e3a26 0%, 
-      #c41e3a1f 50%, 
-      #c41e3a26 100%) !important;
+      rgba(239, 68, 68, 0.15) 0%, 
+      rgba(220, 38, 38, 0.12) 50%, 
+      rgba(239, 68, 68, 0.15) 100%) !important;
     /* BORDURE ROUGE EN DARK MODE */
-    border: 2px solid #c41e3a4d !important;
-    color: #d63851 !important;
+    border: 2px solid rgba(239, 68, 68, 0.3) !important;
+    color: rgba(248, 113, 113, 1) !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     /* BOX-SHADOW SANS BORDURE EN DARK MODE */
     box-shadow: 
-      0 4px 20px #c41e3a33,
+      0 4px 20px rgba(239, 68, 68, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1px 0 #c41e3a26 !important;
+      inset 0 -1px 0 rgba(239, 68, 68, 0.15) !important;
   }
 
   .dark .liquid-glass-black::before {
     background: linear-gradient(
       90deg,
       transparent,
-      #c41e3a26,
+      rgba(239, 68, 68, 0.15),
       transparent
     );
   }
 
   .dark .liquid-glass-black:hover {
     background: linear-gradient(135deg, 
-      #d6385133 0%, 
-      #c41e3a2e 50%, 
-      #d6385133 100%) !important;
+      rgba(248, 113, 113, 0.2) 0%, 
+      rgba(239, 68, 68, 0.18) 50%, 
+      rgba(248, 113, 113, 0.2) 100%) !important;
     /* BORDURE IDENTIQUE EN DARK MODE */
-    border: 2px solid #c41e3a4d !important;
-    color: #c41e3a !important;
+    border: 2px solid rgba(239, 68, 68, 0.3) !important;
+    color: rgba(239, 68, 68, 1) !important;
     transform: translateY(-2px) translateZ(0) !important;
     /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
-      0 6px 24px #c41e3a4d,
+      0 6px 24px rgba(239, 68, 68, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 #d6385133 !important;
+      inset 0 -1px 0 rgba(248, 113, 113, 0.2) !important;
   }
 
   .dark .liquid-glass-black:active {
     /* BORDURE IDENTIQUE */
-    border: 2px solid #c41e3a4d !important;
+    border: 2px solid rgba(239, 68, 68, 0.3) !important;
     /* BOX-SHADOW SANS BORDURE */
     box-shadow: 
-      0 4px 16px #c41e3a66,
+      0 4px 16px rgba(239, 68, 68, 0.4),
       inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
   }
 
-  /* NOUVEAU : Cartes NOIRES pour section actualités en light mode */
-  .news-card-dark {
-    /* En light mode: fond noir selon spécifications */
+  /* NOUVEAU : Cartes beiges PLUS CLAIRES pour section actualités en light mode */
+  .news-card-beige {
+    /* En light mode: fond beige très clair et doux */
     background: linear-gradient(135deg, 
-      #1a0408 0%, 
-      #2a0c10 50%, 
-      #1a0408 100%);
-    border: 1px solid #1a040820;
-    color: white;
+      #F8F6F0 0%, 
+      #F5F2EA 50%, 
+      #F8F6F0 100%);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 
-      0 4px 20px rgba(26, 4, 8, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 2px 12px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
   /* Dark mode: garde le style normal */
-  .dark .news-card-dark {
+  .dark .news-card-beige {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     box-shadow: none;
-    color: hsl(var(--card-foreground));
   }
 
-  /* Hover effect pour cartes noires */
-  .news-card-dark:hover {
+  /* Hover effect pour cartes beiges - PLUS DOUX */
+  .news-card-beige:hover {
     background: linear-gradient(135deg, 
-      #2a0c10 0%, 
-      #3a1018 50%, 
-      #2a0c10 100%);
+      #F5F2EA 0%, 
+      #F0EDE3 50%, 
+      #F5F2EA 100%);
     box-shadow: 
-      0 8px 32px rgba(26, 4, 8, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      0 6px 20px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
     transform: translateY(-4px);
   }
 
-  .dark .news-card-dark:hover {
+  .dark .news-card-beige:hover {
     background: hsl(var(--card));
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Texte des cartes noires en light mode */
-  .news-card-dark .card-title {
-    color: white !important;
-  }
-
-  .news-card-dark .card-text {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  .news-card-dark .card-date {
-    color: rgba(255, 255, 255, 0.6) !important;
-  }
-
-  /* Dark mode: couleurs normales */
-  .dark .news-card-dark .card-title,
-  .dark .news-card-dark .card-text,
-  .dark .news-card-dark .card-date {
-    color: inherit !important;
   }
 }
-  /* NOUVEAU : Cartes NOIRES pour spectacles en light mode */
-  .shows-card-dark {
-    /* En light mode: fond noir selon spécifications */
-    background: linear-gradient(135deg, 
-      #090103 0%, 
-      #150408 50%, 
-      #090103 100%);
-    border: 1px solid #09010320;
-    color: white;
-    box-shadow: 
-      0 4px 20px rgba(9, 1, 3, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-
-  /* Dark mode: garde le style normal */
-  .dark .shows-card-dark {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    box-shadow: none;
-    color: hsl(var(--card-foreground));
-  }
-
-  /* Hover effect pour cartes spectacles noires */
-  .shows-card-dark:hover {
-    background: linear-gradient(135deg, 
-      #150408 0%, 
-      #200610 50%, 
-      #150408 100%);
-    box-shadow: 
-      0 8px 32px rgba(9, 1, 3, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    transform: translateY(-4px);
-  }
-
-  .dark .shows-card-dark:hover {
-    background: hsl(var(--card));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Texte des cartes spectacles noires en light mode */
-  .shows-card-dark .card-title {
-    color: white !important;
-  }
-
-  .shows-card-dark .card-text {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  .shows-card-dark .card-date {
-    color: rgba(255, 255, 255, 0.6) !important;
-  }
-
-  .shows-card-dark .card-meta {
-    color: rgba(255, 255, 255, 0.7) !important;
-  }
-
-  /* Dark mode: couleurs normales */
-  .dark .shows-card-dark .card-title,
-  .dark .shows-card-dark .card-text,
-  .dark .shows-card-dark .card-date,
-  .dark .shows-card-dark .card-meta {
-    color: inherit !important;
-  }
-
-  /* Boutons adaptés pour cartes noires */
-  .shows-card-dark .btn-primary {
-    background: linear-gradient(135deg, #c41e3a 0%, #b01b33 50%, #c41e3a 100%) !important;
-    border: 1px solid #c41e3a !important;
-    color: white !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .shows-card-dark .btn-primary:hover {
-    background: linear-gradient(135deg, #d63851 0%, #c41e3a 50%, #d63851 100%) !important;
-    box-shadow: 0 4px 16px rgba(196, 30, 58, 0.4);
-    transform: translateY(-1px);
-  }
-
-  .shows-card-dark .btn-outline {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(10px);
-  }
-
-  .shows-card-dark .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    color: white !important;
-    transform: translateY(-1px);
-  }
-
-  /* Dark mode: boutons normaux */
-  .dark .shows-card-dark .btn-primary,
-  .dark .shows-card-dark .btn-outline {
-    background: revert !important;
-    border: revert !important;
-    color: revert !important;
-    text-shadow: none !important;
-    backdrop-filter: none !important;
-  }
-
-  .dark .shows-card-dark .btn-primary:hover,
-  .dark .shows-card-dark .btn-outline:hover {
-    background: revert !important;
-    border-color: revert !important;
-    color: revert !important;
-    box-shadow: revert !important;
-    transform: revert !important;
-  }
 
 /* Animations */
 @keyframes fade-in-up {
@@ -774,7 +633,7 @@ html {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.2;
-  color: #c41e3a;
+  color: hsl(0 65% 45%);
   letter-spacing: -0.025em;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   /* Stabilisation du texte */
@@ -789,7 +648,7 @@ html {
 }
 
 .dark .logo-text {
-  color: #d63851;
+  color: hsl(0 65% 55%);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -806,7 +665,7 @@ html {
 }
 
 .header-scrolled .logo-text {
-  color: #a01729;
+  color: hsl(0 65% 40%);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -816,7 +675,7 @@ html {
 }
 
 .dark .header-scrolled .logo-text {
-  color: #e04a63;
+  color: hsl(0 65% 60%);
 }
 
 /* Hover effect subtil pour le logo */
@@ -853,11 +712,11 @@ html {
 
 /* Muted sections with subtle tint - ADAPTÉ AU NOUVEAU BACKGROUND */
 .bg-muted\/30 {
-  /* En light mode, utilise une teinte plus douce qui s'harmonise avec #fef7f8 */
+  /* En light mode, utilise une teinte plus douce qui s'harmonise avec #FAFAFA */
   background: linear-gradient(135deg, 
-    #fdf4f5 0%, 
-    #fcf1f2 50%, 
-    #fdf4f5 100%);
+    #F5F5F5 0%, 
+    #F0F0F0 50%, 
+    #F5F5F5 100%);
 }
 
 .dark .bg-muted\/30 {
