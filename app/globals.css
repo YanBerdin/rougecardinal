@@ -369,38 +369,38 @@
     border-color: hsl(0 65% 55% / 0.4);
   }
 
-  /* NOUVEAU : Liquid Glass Button Noir avec HOVER ROUGE */
-  .liquid-glass-black {
+  /* NOUVEAU : Liquid Glass Button Rouge - STABILISÉ SANS TREMBLEMENT */
+  .liquid-glass-red {
     position: relative;
     overflow: hidden;
-    /* Background noir avec transparence pour effet glass */
+    /* Background avec teinte rouge INTENSIFIÉE pour meilleur contraste sur #F5F3EB */
     background: linear-gradient(135deg, 
-      rgba(0, 0, 0, 0.85) 0%, 
-      rgba(20, 20, 20, 0.8) 50%, 
-      rgba(0, 0, 0, 0.85) 100%);
+      rgba(220, 38, 38, 0.22) 0%, 
+      rgba(185, 28, 28, 0.18) 50%, 
+      rgba(220, 38, 38, 0.22) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* Bordure noire subtile */
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    /* Texte blanc contrasté */
-    color: rgba(255, 255, 255, 0.95);
+    /* Bordure rouge plus visible */
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    /* Texte rouge plus contrasté */
+    color: rgba(127, 29, 29, 1);
     font-weight: 600;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
     box-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-    /* TRANSITION STABILISÉE */
+      0 4px 20px rgba(220, 38, 38, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(220, 38, 38, 0.2);
+    /* TRANSITION STABILISÉE - évite les conflits */
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    /* STABILISATION */
+    /* STABILISATION - évite le tremblement */
     transform: translateZ(0);
     will-change: transform, box-shadow, background;
-    /* Zone de hover élargie */
+    /* Zone de hover élargie pour éviter les conflits de bordure */
     margin: 2px;
   }
 
-  /* Effet shimmer noir */
-  .liquid-glass-black::before {
+  /* Effet shimmer rouge - STABILISÉ */
+  .liquid-glass-red::before {
     content: '';
     position: absolute;
     top: 0;
@@ -410,51 +410,46 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.15),
+      rgba(220, 38, 38, 0.25),
       transparent
     );
     transition: left 0.8s ease;
+    /* STABILISATION */
     transform: translateZ(0);
   }
 
-  /* HOVER ROUGE EN LIGHT MODE - NOIR EN DARK MODE */
-  .liquid-glass-black:hover {
-    /* Light mode: devient rouge au hover */
+  /* HOVER STABILISÉ - évite le tremblement */
+  .liquid-glass-red:hover {
+    /* Hover avec rouge plus clair et moins intense */
     background: linear-gradient(135deg, 
-      hsl(0 65% 50%) 0%, 
-      hsl(0 55% 45%) 50%, 
-      hsl(0 65% 50%) 100%);
-    border-color: hsl(0 65% 50% / 0.6);
-    color: rgba(255, 255, 255, 1);
-    /* TRANSFORMATION STABILISÉE */
+      rgba(239, 68, 68, 0.18) 0%, 
+      rgba(220, 38, 38, 0.15) 50%, 
+      rgba(239, 68, 68, 0.18) 100%);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: rgba(185, 28, 28, 1);
+    /* TRANSFORMATION STABILISÉE - moins de mouvement */
     transform: translateY(-2px) translateZ(0);
     box-shadow: 
-      0 6px 24px hsl(0 65% 50% / 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 hsl(0 65% 50% / 0.3);
+      0 6px 24px rgba(220, 38, 38, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 rgba(239, 68, 68, 0.2);
   }
 
-  .liquid-glass-black:hover::before {
+  .liquid-glass-red:hover::before {
     left: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
   }
 
-  /* ACTIVE STATE ROUGE */
-  .liquid-glass-black:active {
+  /* ACTIVE STATE STABILISÉ */
+  .liquid-glass-red:active {
     transform: translateY(-1px) translateZ(0);
     box-shadow: 
-      0 4px 16px hsl(0 65% 50% / 0.5),
-      inset 0 2px 4px rgba(0, 0, 0, 0.2);
+      0 4px 16px rgba(220, 38, 38, 0.3),
+      inset 0 2px 4px rgba(220, 38, 38, 0.15);
     transition: all 0.1s ease;
   }
 
-  /* Dark mode pour liquid glass noir - GARDE LE STYLE ROUGE */
-  .dark .liquid-glass-black {
+  /* Dark mode pour liquid glass rouge - STABILISÉ */
+  .dark .liquid-glass-red {
     background: linear-gradient(135deg, 
       rgba(239, 68, 68, 0.15) 0%, 
       rgba(220, 38, 38, 0.12) 50%, 
@@ -468,7 +463,7 @@
       inset 0 -1px 0 rgba(239, 68, 68, 0.15);
   }
 
-  .dark .liquid-glass-black::before {
+  .dark .liquid-glass-red::before {
     background: linear-gradient(
       90deg,
       transparent,
@@ -477,7 +472,7 @@
     );
   }
 
-  .dark .liquid-glass-black:hover {
+  .dark .liquid-glass-red:hover {
     background: linear-gradient(135deg, 
       rgba(248, 113, 113, 0.2) 0%, 
       rgba(239, 68, 68, 0.18) 50%, 

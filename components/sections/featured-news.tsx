@@ -114,7 +114,7 @@ export function FeaturedNews() {
             variant="outline" 
             size="lg" 
             asChild 
-            className="liquid-glass-black"
+            className="liquid-glass-red"
           >
             <Link href="/actualites">
               Voir toutes les actualités
