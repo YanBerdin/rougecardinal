@@ -369,49 +369,44 @@
     border-color: hsl(0 65% 55% / 0.4);
   }
 
-  /* SOLUTION DÉFINITIVE : Liquid Glass Button avec BORDURE CSS NATIVE */
+  /* NOUVEAU : Liquid Glass Button Noir avec HOVER ROUGE - SANS BORDURE POUR ÉVITER LE TREMBLEMENT */
   .liquid-glass-black {
     position: relative;
     overflow: hidden;
-    /* DIMENSIONS FIXES ABSOLUES - AUCUN CHANGEMENT POSSIBLE */
-    box-sizing: border-box !important;
-    min-height: 44px !important;
-    padding: 0.75rem 1.5rem !important;
-    /* BORDURE CSS NATIVE - STABLE ET SANS CONFLIT */
-    border: 2px solid rgba(0, 0, 0, 0.4) !important;
-    border-radius: 0.5rem !important;
     /* Background noir avec transparence pour effet glass */
     background: linear-gradient(135deg, 
       rgba(0, 0, 0, 0.85) 0%, 
       rgba(20, 20, 20, 0.8) 50%, 
-      rgba(0, 0, 0, 0.85) 100%) !important;
+      rgba(0, 0, 0, 0.85) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    /* SUPPRESSION COMPLÈTE DE LA BORDURE - UTILISATION DE BOX-SHADOW À LA PLACE */
+    border: none !important;
     /* Texte blanc contrasté - FORCÉ */
     color: rgba(255, 255, 255, 0.95) !important;
-    font-weight: 600 !important;
+    font-weight: 600;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    /* OMBRES SANS BORDURE SIMULÉE */
+    /* BOX-SHADOW POUR SIMULER UNE BORDURE SANS LAYOUT SHIFT */
     box-shadow: 
       0 4px 20px rgba(0, 0, 0, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+      0 0 0 2px rgba(0, 0, 0, 0.4); /* BORDURE SIMULÉE */
     /* TRANSITION ULTRA-STABILISÉE */
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     /* STABILISATION GPU MAXIMALE */
-    transform: translateZ(0) !important;
-    will-change: transform, box-shadow, background !important;
-    /* Alignement parfait */
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    /* ISOLATION POUR PSEUDO-ÉLÉMENTS */
-    isolation: isolate;
-    /* SUPPRESSION DE TOUT OUTLINE */
-    outline: none !important;
+    transform: translateZ(0);
+    will-change: transform, box-shadow, background;
+    /* Évite TOUT layout shift */
+    box-sizing: border-box;
+    /* Dimensions fixes pour éviter tout décalage */
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Effet shimmer noir - SANS CONFLIT */
+  /* Effet shimmer noir */
   .liquid-glass-black::before {
     content: '';
     position: absolute;
@@ -428,28 +423,26 @@
     transition: left 0.8s ease;
     transform: translateZ(0);
     pointer-events: none;
-    z-index: 1;
   }
 
-  /* HOVER ROUGE EN LIGHT MODE - DIMENSIONS IDENTIQUES */
+  /* HOVER ROUGE EN LIGHT MODE - AUCUN CHANGEMENT DE DIMENSIONS */
   .liquid-glass-black:hover {
     /* Light mode: devient rouge au hover */
     background: linear-gradient(135deg, 
       hsl(0 65% 50%) 0%, 
       hsl(0 55% 45%) 50%, 
       hsl(0 65% 50%) 100%) !important;
-    /* BORDURE IDENTIQUE - AUCUN CHANGEMENT */
-    border: 2px solid rgba(0, 0, 0, 0.4) !important;
     /* TEXTE BLANC FORCÉ AU HOVER */
     color: rgba(255, 255, 255, 1) !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
-    /* TRANSFORMATION STABILISÉE - MÊMES DIMENSIONS */
-    transform: translateY(-2px) translateZ(0) !important;
-    /* BOX-SHADOW MODIFIÉ SANS BORDURE */
+    /* TRANSFORMATION STABILISÉE - MÊME DIMENSIONS */
+    transform: translateY(-2px) translateZ(0);
+    /* BOX-SHADOW MODIFIÉ SANS CHANGER LES DIMENSIONS */
     box-shadow: 
       0 6px 24px hsl(0 65% 50% / 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 hsl(0 65% 50% / 0.3) !important;
+      inset 0 -1px 0 hsl(0 65% 50% / 0.3),
+      0 0 0 2px rgba(0, 0, 0, 0.4); /* BORDURE SIMULÉE IDENTIQUE */
   }
 
   .liquid-glass-black:hover::before {
@@ -464,15 +457,14 @@
 
   /* ACTIVE STATE ROUGE - DIMENSIONS FIXES */
   .liquid-glass-black:active {
-    transform: translateY(-1px) translateZ(0) !important;
+    transform: translateY(-1px) translateZ(0);
     color: rgba(255, 255, 255, 1) !important;
-    /* BORDURE IDENTIQUE */
-    border: 2px solid rgba(0, 0, 0, 0.4) !important;
-    /* BOX-SHADOW SANS BORDURE */
+    /* BOX-SHADOW IDENTIQUE EN DIMENSIONS */
     box-shadow: 
       0 4px 16px hsl(0 65% 50% / 0.5),
-      inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.1s ease !important;
+      inset 0 2px 4px rgba(0, 0, 0, 0.2),
+      0 0 0 2px rgba(0, 0, 0, 0.4); /* BORDURE SIMULÉE IDENTIQUE */
+    transition: all 0.1s ease;
   }
 
   /* Dark mode pour liquid glass noir - DIMENSIONS FIXES */
@@ -480,16 +472,15 @@
     background: linear-gradient(135deg, 
       rgba(239, 68, 68, 0.15) 0%, 
       rgba(220, 38, 38, 0.12) 50%, 
-      rgba(239, 68, 68, 0.15) 100%) !important;
-    /* BORDURE ROUGE EN DARK MODE */
-    border: 2px solid rgba(239, 68, 68, 0.3) !important;
+      rgba(239, 68, 68, 0.15) 100%);
     color: rgba(248, 113, 113, 1) !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    /* BOX-SHADOW SANS BORDURE EN DARK MODE */
+    /* BOX-SHADOW POUR BORDURE SIMULÉE EN DARK MODE */
     box-shadow: 
       0 4px 20px rgba(239, 68, 68, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1px 0 rgba(239, 68, 68, 0.15) !important;
+      inset 0 -1px 0 rgba(239, 68, 68, 0.15),
+      0 0 0 2px rgba(239, 68, 68, 0.3); /* BORDURE SIMULÉE ROUGE */
   }
 
   .dark .liquid-glass-black::before {
@@ -506,24 +497,22 @@
       rgba(248, 113, 113, 0.2) 0%, 
       rgba(239, 68, 68, 0.18) 50%, 
       rgba(248, 113, 113, 0.2) 100%) !important;
-    /* BORDURE IDENTIQUE EN DARK MODE */
-    border: 2px solid rgba(239, 68, 68, 0.3) !important;
     color: rgba(239, 68, 68, 1) !important;
-    transform: translateY(-2px) translateZ(0) !important;
-    /* BOX-SHADOW SANS BORDURE */
+    transform: translateY(-2px) translateZ(0);
+    /* BOX-SHADOW IDENTIQUE EN DIMENSIONS */
     box-shadow: 
       0 6px 24px rgba(239, 68, 68, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(248, 113, 113, 0.2) !important;
+      inset 0 -1px 0 rgba(248, 113, 113, 0.2),
+      0 0 0 2px rgba(239, 68, 68, 0.3); /* BORDURE SIMULÉE IDENTIQUE */
   }
 
   .dark .liquid-glass-black:active {
-    /* BORDURE IDENTIQUE */
-    border: 2px solid rgba(239, 68, 68, 0.3) !important;
-    /* BOX-SHADOW SANS BORDURE */
+    /* BOX-SHADOW IDENTIQUE EN DIMENSIONS */
     box-shadow: 
       0 4px 16px rgba(239, 68, 68, 0.4),
-      inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+      inset 0 2px 4px rgba(0, 0, 0, 0.3),
+      0 0 0 2px rgba(239, 68, 68, 0.3); /* BORDURE SIMULÉE IDENTIQUE */
   }
 
   /* NOUVEAU : Cartes beiges PLUS CLAIRES pour section actualités en light mode */
