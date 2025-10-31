@@ -173,7 +173,7 @@ export default function AgendaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
             {filteredEvents.map((event, index) => (
-              <Card key={event.id} className={`card-hover animate-fade-in-up overflow-hidden`} style={{ animationDelay: `${index * 0.05}s` }}>
+              <Card key={event.id} className={`card-hover animate-fade-in-up overflow-hidden shows-card-dark`} style={{ animationDelay: `${index * 0.05}s` }}>
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5">
                   {/* Image */}
                   <div className="relative">
@@ -199,7 +199,7 @@ export default function AgendaPage() {
                       {/* Info principale */}
                       <div className="lg:col-span-2">
                         <div className="flex items-start justify-between mb-4">
-                          <h3 className="text-xl font-bold hover:text-primary transition-colors">
+                          <h3 className="text-xl font-bold hover:text-primary transition-colors card-title">
                             {event.title}
                           </h3>
                           <Badge variant="outline" className={
@@ -210,7 +210,7 @@ export default function AgendaPage() {
                           </Badge>
                         </div>
                         
-                        <div className="space-y-3 text-muted-foreground">
+                        <div className="space-y-3 card-meta">
                           <div className="flex items-center">
                             <Calendar className="h-4 w-4 mr-3 text-primary" />
                             <span className="font-medium">
@@ -239,7 +239,7 @@ export default function AgendaPage() {
                       {/* Actions */}
                       <div className="flex flex-col justify-center space-y-3">
                         {event.ticketUrl && (
-                          <Button className="w-full" asChild>
+                          <Button className="w-full btn-primary" asChild>
                             <a 
                               href={event.ticketUrl}
                               target="_blank"
@@ -252,8 +252,7 @@ export default function AgendaPage() {
                         )}
                         
                         <Button
-                          variant="outline"
-                          className="w-full"
+                          className="w-full btn-outline"
                           onClick={() => generateCalendarFile(event)}
                         >
                           <Download className="mr-2 h-4 w-4" />

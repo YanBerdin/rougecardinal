@@ -12,7 +12,7 @@ const news = [
     id: 1,
     title: "Nomination aux Molières 2024",
     excerpt: "Notre spectacle 'Les Murmures du Temps' a été nominé dans la catégorie Meilleur Spectacle d'Auteur Contemporain.",
-    date: "2024-01-15",
+    date: "2025-08-15",
     image: "https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Prix"
   },
@@ -20,7 +20,7 @@ const news = [
     id: 2,
     title: "Tournée Nationale 2024",
     excerpt: "Retrouvez-nous dans 15 villes de France pour une tournée exceptionnelle de nos créations phares.",
-    date: "2024-01-10",
+    date: "2025-09-10",
     image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Tournée"
   },
@@ -28,7 +28,7 @@ const news = [
     id: 3,
     title: "Résidence de Création",
     excerpt: "La compagnie entame une résidence de trois mois au Théâtre de la Ville pour sa prochaine création.",
-    date: "2024-01-05",
+    date: "2025-12-05",
     image: "https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Création"
   }
@@ -69,6 +69,7 @@ export function FeaturedNews() {
   if (featuredNews.length === 0) {
     return null;
   }
+  
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +135,7 @@ export function FeaturedNews() {
             variant="outline" 
             size="lg" 
             asChild 
-            className="liquid-glass-black"
+            className="cta-blur-button"
           >
             <Link href="/actualites">
               Voir toutes les actualités
